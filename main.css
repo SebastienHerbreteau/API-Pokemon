@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon {
+  width: 12%;
+  height: 350px;
+  background: white;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 6px gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.pokemon:hover {
+  transform: scale(1.05);
+}
+
+.border {
+  width: 92%;
+  height: 94%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 6px solid rgb(91, 90, 172);
+  cursor: pointer;
+}
+
+p {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Denk One", sans-serif;
+  color: rgb(91, 90, 172);
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  align-self: flex-end;
+}
