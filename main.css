@@ -1,11 +1,12 @@
 body {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .pokemon {
-  width: 12%;
-  height: 350px;
+  width: 220px;
+  height: fit-content;
   background: white;
   margin: 20px;
   border-radius: 10px;
@@ -13,24 +14,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s;
+  
 }
-.pokemon:hover {
-  transform: scale(1.05);
-}
+
 
 .border {
-  width: 92%;
-  height: 94%;
+  height: fit-content;
+  width: fit-content;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  border: 6px solid rgb(91, 90, 172);
-  cursor: pointer;
+  background-color: rgb(211, 247, 242);
+ 
 }
 
-p {
+h2 {
   text-transform: uppercase;
   text-align: center;
   font-size: 24px;
@@ -38,8 +36,41 @@ p {
   color: rgb(91, 90, 172);
 }
 
-img {
-  height: 200px;
-  width: 200px;
-  align-self: flex-end;
+h3{
+  font-family: "Denk One", sans-serif;
+  text-align: center;
+  font-weight: 100;
+  color: rgb(91, 90, 172);
+  
+}
+p{
+  font-family: "Denk One", sans-serif;
+  text-align: center;
+  color: rgb(91, 90, 172);
+  
+}
+
+.type{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: fit-content;
+  gap: 10px;
+  
+}
+
+.typeImage{
+  width: 15%;
+  
+}
+
+.imgPoke {
+  width: 100%;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.imgPoke:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(4px 6px 2px rgb(59, 59, 59));
 }
