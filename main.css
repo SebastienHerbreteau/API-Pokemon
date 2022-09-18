@@ -1,37 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
 body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
-.pokemon {
-  width: 220px;
+.card {
   height: fit-content;
+  width: 250px;
   background: white;
+  padding-top: 10px;
   margin: 20px;
   border-radius: 10px;
   box-shadow: 2px 4px 6px gray;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-}
-
-
-.border {
-  height: fit-content;
-  width: fit-content;
-  border-radius: 10px;
-  display: flex;
   flex-direction: column;
-  background-color: rgb(211, 247, 242);
- 
+  gap: 25px;
 }
 
 h2 {
   text-transform: uppercase;
   text-align: center;
   font-size: 24px;
+  margin-top: 15px;
   font-family: "Denk One", sans-serif;
   color: rgb(91, 90, 172);
 }
@@ -39,6 +40,7 @@ h2 {
 h3{
   font-family: "Denk One", sans-serif;
   text-align: center;
+  font-size: 14px;
   font-weight: 100;
   color: rgb(91, 90, 172);
   
@@ -47,6 +49,7 @@ p{
   font-family: "Denk One", sans-serif;
   text-align: center;
   color: rgb(91, 90, 172);
+  font-size: 20px;
   
 }
 
@@ -57,11 +60,11 @@ p{
   height: fit-content;
   gap: 10px;
   
+  
 }
 
 .typeImage{
-  width: 15%;
-  
+  width: 12%;
 }
 
 .imgPoke {
@@ -73,4 +76,28 @@ p{
 .imgPoke:hover {
   transform: scale(1.02);
   filter: drop-shadow(4px 6px 2px rgb(59, 59, 59));
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.7;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.active{
+  display: flex;
+}
+
+.imgModalActive{
+  opacity: 1;
+  z-index: 2;
+}
+.green {
+  background-color: green;
 }
