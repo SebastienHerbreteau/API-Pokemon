@@ -3,24 +3,41 @@ fetch("100.json")
   .then((response) => response.json())
   .then((pokeBase) => {
     for (pokemon of pokeBase) {
-      var typeUn = pokemon.apiTypes[0].name;
-      var typeDeux = pokemon.apiTypes[1].name;
-      console.log(typeUn);
-      console.log(typeDeux);
       
+    
+      if (pokemon.apiTypes[1].name == undefined){
+       
         document.body.innerHTML += 
-      `
-      <div class="card">
-        <h2>${pokemon.name}</h2>
-        <h3>Pokedex ID# ${pokemon.id}</h3>
-        <div class="type">
-          <img class="typeImage" src="${pokemon.apiTypes[0].image}"/>
-          <p>${pokemon.apiTypes[0].name}</p>
+        `
+        <div class="card">
+          <h2>${pokemon.name}</h2>
+          <h3>Pokedex ID# ${pokemon.id}</h3>
+          <div class="type">
+            <img class="typeImage" src="${pokemon.apiTypes[0].image}"/>
+            <p>${pokemon.apiTypes[0].name}</p>
+          </div>
+          <img class="imgPoke" src="${pokemon.image}">
         </div>
-        <img class="imgPoke" src="${pokemon.image}">
-      </div>
-      `
-      ;
+        `
+        ;
+      }
+      else{
+        document.body.innerHTML += 
+        `
+        <div class="card">
+          <h2>${pokemon.name}</h2>
+          <h3>Pokedex ID# ${pokemon.id}</h3>
+          <div class="type">
+            <img class="typeImage" src="${pokemon.apiTypes[0].image}"/>
+            <p>${pokemon.apiTypes[0].name}</p>
+            <img class="typeImage" src="${pokemon.apiTypes[1].image}"/>
+            <p>${pokemon.apiTypes[1].name}</p>
+          </div>
+          <img class="imgPoke" src="${pokemon.image}">
+        </div>
+        `
+      }
+        
     
   }
 }
