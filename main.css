@@ -2,15 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Pokemon-Hollow;
 }
 
 body {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   position: relative;
+  background-color: bisque;
 }
 
+main {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15%;
+}
 .card {
   height: fit-content;
   width: 300px;
@@ -23,18 +32,69 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 25px;
   position: relative;
   border: 8px solid white;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.card::after {
+  content: "";
+  transform: rotate(135deg);
+  position: absolute;
+  z-index: 0;
+  width: 80%;
+  height: 300%;
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(255, 255, 255, 1) 80%,
+    transparent
+  );
+  left: -1200px;
+  top: 1000px;
+  animation: shine 3s ease infinite;
+}
+
+@keyframes shine {
+  to {
+    left: 1200px;
+    top: -1000px;
+  }
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.514);
+  display: flex;
+  justify-content: center;
+}
+.pokedeck {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  position: fixed;
+  z-index: 2;
+}
+
+.pokedeck > img {
+  height: 100%;
+  width: 100%;
+  filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.655));
 }
 
 h2 {
   text-transform: uppercase;
   text-align: center;
   font-size: 24px;
-  margin-top: 15px;
   font-family: "Denk One", sans-serif;
-  color: rgb(91, 90, 172);
+  color: rgba(47, 47, 53, 0.87);
+  z-index: 1;
+  margin-bottom: 50px;
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
 }
 
 h3 {
@@ -42,16 +102,19 @@ h3 {
   text-align: center;
   font-size: 14px;
   font-weight: 100;
-  color: rgb(91, 90, 172);
+  color: white;
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 1;
+  text-shadow: 1px 2px 2px black;
 }
 p {
   font-family: "Denk One", sans-serif;
   text-align: center;
   color: rgb(91, 90, 172);
   font-size: 20px;
+  z-index: 1;
 }
 
 .type {
@@ -61,19 +124,23 @@ p {
   height: fit-content;
   gap: 10px;
   margin-bottom: 20px;
+  z-index: 1;
 }
 
 .typeImage {
   width: 12%;
+  z-index: 1;
 }
 
 .imgPoke {
   width: 80%;
-  transition: 0.4s;
   cursor: pointer;
+  z-index: 1;
+  margin-top: 30px;
+  filter: drop-shadow(4px 6px 2px rgba(59, 59, 59, 0.655));
 }
 
-.imgPoke:hover {
-  transform: scale(1.02);
-  filter: drop-shadow(4px 6px 2px rgb(59, 59, 59));
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 8px 12px gray;
 }
