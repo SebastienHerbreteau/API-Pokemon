@@ -24,11 +24,16 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/200")
     }
     function bgType1() {
       if (pokemon.apiTypes[1] == undefined) {
-        if (pokemon.apiTypes[0].name == "Poison") return "purple";
-        if (pokemon.apiTypes[0].name == "Plante") return "green";
-        if (pokemon.apiTypes[0].name == "Feu") return "orange";
-        if (pokemon.apiTypes[0].name == "Eau") return "blue";
-        if (pokemon.apiTypes[0].name == "Insecte") return "lightgreen";
+        if (pokemon.apiTypes[0].name == "Poison")
+          return "background: rgb(239,0,255);background: linear-gradient(50deg, rgba(239,0,255,1) 30%, rgba(154,0,255,1) 50%, rgba(239,0,255,1) 70%);";
+        if (pokemon.apiTypes[0].name == "Plante")
+          return "background: rgb(0,191,93);background: linear-gradient(50deg, rgba(0,191,93,1) 30%, rgba(17,136,0,1) 50%, rgba(0,191,93,1) 70%);";
+        if (pokemon.apiTypes[0].name == "Feu")
+          return "background: rgb(255,231,0);background: linear-gradient(50deg, rgba(255,231,0,1) 30%, rgba(255,141,0,1) 50%, rgba(255,231,0,1) 70%);";
+        if (pokemon.apiTypes[0].name == "Eau")
+          return "background: rgb(0,212,247);background: linear-gradient(50deg, rgba(0,212,247,1) 30%, rgba(0,116,255,1) 50%, rgba(0,212,247,1) 70%);";
+        if (pokemon.apiTypes[0].name == "Insecte")
+          return "background: rgb(169,255,135);background: linear-gradient(50deg, rgba(169,255,135,1) 30%, rgba(15,173,0,1) 50%, rgba(169,255,135,1) 70%);";
         if (pokemon.apiTypes[0].name == "Acier") return "lightgrey";
         if (pokemon.apiTypes[0].name == "Combat") return "red";
         if (pokemon.apiTypes[0].name == "Électrik") return "yellow";
@@ -43,11 +48,16 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/200")
         if (pokemon.apiTypes[0].name == "Vol") return "blue";
         if (pokemon.apiTypes[0].name == "Ténèbres") return "black";
       } else if (pokemon.apiTypes[1] !== undefined) {
-        if (pokemon.apiTypes[1].name == "Poison") return "purple";
-        if (pokemon.apiTypes[1].name == "Plante") return "green";
-        if (pokemon.apiTypes[1].name == "Feu") return "orange";
-        if (pokemon.apiTypes[1].name == "Eau") return "blue";
-        if (pokemon.apiTypes[1].name == "Insecte") return "lightgreen";
+        if (pokemon.apiTypes[1].name == "Poison")
+          return "background: rgb(239,0,255);background: linear-gradient(50deg, rgba(239,0,255,1) 30%, rgba(154,0,255,1) 50%, rgba(239,0,255,1) 70%);";
+        if (pokemon.apiTypes[1].name == "Plante")
+          return "background: rgb(0,191,93);background: linear-gradient(50deg, rgba(0,191,93,1) 30%, rgba(17,136,0,1) 50%, rgba(0,191,93,1) 70%);";
+        if (pokemon.apiTypes[1].name == "Feu")
+          return "background: rgb(255,231,0);background: linear-gradient(50deg, rgba(255,231,0,1) 30%, rgba(255,141,0,1) 50%, rgba(255,231,0,1) 70%);";
+        if (pokemon.apiTypes[1].name == "Eau")
+          return "background: rgb(0,212,247);background: linear-gradient(50deg, rgba(0,212,247,1) 30%, rgba(0,116,255,1) 50%, rgba(0,212,247,1) 70%);";
+        if (pokemon.apiTypes[1].name == "Insecte")
+          return "background: rgb(169,255,135);background: linear-gradient(50deg, rgba(169,255,135,1) 30%, rgba(15,173,0,1) 50%, rgba(169,255,135,1) 70%);";
         if (pokemon.apiTypes[1].name == "Acier") return "lightgrey";
         if (pokemon.apiTypes[1].name == "Combat") return "red";
         if (pokemon.apiTypes[1].name == "Électrik") return "yellow";
