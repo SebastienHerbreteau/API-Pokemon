@@ -1,10 +1,8 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
 
 body {
   display: flex;
@@ -15,8 +13,8 @@ body {
 
 .card {
   height: fit-content;
-  width: 250px;
-  background: white;
+  width: 300px;
+  background: wheat;
   padding-top: 10px;
   margin: 20px;
   border-radius: 10px;
@@ -26,6 +24,8 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 25px;
+  position: relative;
+  border: 8px solid white;
 }
 
 h2 {
@@ -37,38 +37,38 @@ h2 {
   color: rgb(91, 90, 172);
 }
 
-h3{
+h3 {
   font-family: "Denk One", sans-serif;
   text-align: center;
   font-size: 14px;
   font-weight: 100;
   color: rgb(91, 90, 172);
-  
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
-p{
+p {
   font-family: "Denk One", sans-serif;
   text-align: center;
   color: rgb(91, 90, 172);
   font-size: 20px;
-  
 }
 
-.type{
+.type {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   height: fit-content;
   gap: 10px;
-  
-  
+  margin-bottom: 20px;
 }
 
-.typeImage{
+.typeImage {
   width: 12%;
 }
 
 .imgPoke {
-  width: 100%;
+  width: 80%;
   transition: 0.4s;
   cursor: pointer;
 }
@@ -78,26 +78,10 @@ p{
   filter: drop-shadow(4px 6px 2px rgb(59, 59, 59));
 }
 
-.modal{
-  display: none;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  opacity: 0.7;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-
-.active{
-  display: flex;
-}
-
-.imgModalActive{
-  opacity: 1;
-  z-index: 2;
-}
-.green {
+.plante {
   background-color: green;
+}
+
+.poison {
+  background-color: rgb(184, 0, 129);
 }
