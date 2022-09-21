@@ -59,15 +59,12 @@ function type(pokemon) {
   }
 }
 
-// function bgType1(pokemon) {
-
-for (const [key, value] of Object.entries(typeCouleur)) {
-  console.log(`${key}: ${value}`);
+function bgType1(pokemon) {
+  for (const [key, value] of Object.entries(typeCouleur)) {
+    if (pokemon.apiTypes[1] == undefined) {
+      if (pokemon.apiTypes[0].name == [key]) return [value];
+    } else if (pokemon.apiTypes[1] !== undefined) {
+      if (pokemon.apiTypes[1].name == [key]) return [value];
+    }
+  }
 }
-if (pokemon.apiTypes[1] == undefined) {
-  if (pokemon.apiTypes[0].name == Object.keys(typeCouleur)) console.log("ok");
-} else if (pokemon.apiTypes[1] !== undefined) {
-  if (pokemon.apiTypes[1].name == "Feu");
-}
-
-// }
