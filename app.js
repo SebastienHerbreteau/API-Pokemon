@@ -1,8 +1,7 @@
 let typeCouleur = {
   Normal:
     "background: rgb(184,184,184);background: linear-gradient(50deg, rgba(184,184,184,1) 30%, rgba(255,255,255,1) 50%, rgba(184,184,184,1) 70%)",
-  Combat:
-    "background: rgb(255,122,122);background: linear-gradient(50deg, rgba(255,122,122,1) 30%, rgba(255,0,0,1) 50%, rgba(255,122,122,1) 70%)",
+  Combat: "background-image: url('assets/combat.png')",
   Vol: "background: rgb(190,255,254);background: linear-gradient(50deg, rgba(190,255,254,1) 30%, rgba(46,254,245,1) 50%, rgba(190,255,254,1) 70%);",
   Poison:
     "background: rgb(239,0,255);background: linear-gradient(50deg, rgba(239,0,255,1) 30%, rgba(154,0,255,1) 50%, rgba(239,0,255,1) 70%);",
@@ -15,10 +14,9 @@ let typeCouleur = {
     "background: rgb(166,95,232);background: linear-gradient(50deg, rgba(166,95,232,1) 30%, rgba(183,0,237,1) 50%, rgba(166,95,232,1) 70%)",
   Acier:
     "background: rgb(88,175,153);background: linear-gradient(50deg, rgba(88,175,153,1) 30%, rgba(114,209,215,1) 50%, rgba(88,175,153,1) 70%)",
-  Feu: "background: rgb(255,231,0);background: linear-gradient(50deg, rgba(255,231,0,1) 30%, rgba(255,141,0,1) 50%, rgba(255,231,0,1) 70%);",
+  Feu: "background-image: url('assets/feu.png')",
   Eau: "background: rgb(0,212,247);background: linear-gradient(50deg, rgba(0,212,247,1) 30%, rgba(0,116,255,1) 50%, rgba(0,212,247,1) 70%);",
-  Plante:
-    "background: rgb(0,191,93);background: linear-gradient(50deg, rgba(0,191,93,1) 30%, rgba(17,136,0,1) 50%, rgba(0,191,93,1) 70%);",
+  Plante: "background-image: url('assets/plante.png')",
   Électrik:
     "background: rgb(221,221,221);background: linear-gradient(50deg, rgba(221,221,221,1) 30%, rgba(254,255,0,1) 50%, rgba(221,221,221,1) 70%)",
   Psy: "background: rgb(255,49,88);background: linear-gradient(50deg, rgba(255,49,88,1) 30%, rgba(255,190,202,1) 50%, rgba(255,49,88,1) 70%)",
@@ -37,7 +35,7 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/200")
     for (pokemon of pokebase) {
       let main = document.querySelector("main");
       main.innerHTML += `
-        <div class="card" style="background: ${bgType1(pokemon)}">
+        <div class="card" style="${bgType1(pokemon)}">
           <img class="imgPoke" src="${pokemon.image}">
           <h2>${pokemon.name}</h2>
           <h3>#${pokemon.id}</h3>
