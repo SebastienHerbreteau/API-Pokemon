@@ -50,15 +50,15 @@ main {
     rgba(255, 255, 255, 1) 80%,
     transparent
   );
-  left: -1200px;
-  top: 1000px;
-  animation: shine 3s ease infinite;
+  left: -1700px;
+  top: 1500px;
+  animation: shine 6s ease infinite;
 }
 
 @keyframes shine {
   to {
-    left: 1200px;
-    top: -1000px;
+    left: 1700px;
+    top: -1500px;
   }
 }
 
@@ -88,10 +88,11 @@ h2 {
   text-align: center;
   font-size: 24px;
   font-family: "Denk One", sans-serif;
-  color: rgba(47, 47, 53, 0.87);
+  color:white;
   z-index: 1;
   margin-bottom: 50px;
-  background-color: white;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 20px;
@@ -112,9 +113,10 @@ h3 {
 p {
   font-family: "Denk One", sans-serif;
   text-align: center;
-  color: rgb(91, 90, 172);
+  color: white;
   font-size: 20px;
   z-index: 1;
+  text-shadow: 1px 1px 2px black;
 }
 
 .type {
@@ -130,6 +132,7 @@ p {
 .typeImage {
   width: 12%;
   z-index: 1;
+  filter: drop-shadow(2px 3px 2px rgba(59, 59, 59, 0.655));
 }
 
 .imgPoke {
