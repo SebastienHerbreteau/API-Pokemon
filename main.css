@@ -11,6 +11,7 @@ body {
   flex-direction: column;
   position: relative;
   background-color: bisque;
+  overflow-x: hidden;
 }
 
 main {
@@ -22,7 +23,7 @@ main {
 }
 .card {
   height: fit-content;
-  width: 300px;
+  width: 250px;
   background: wheat;
   padding-top: 10px;
   margin: 20px;
@@ -36,7 +37,14 @@ main {
   border: 8px solid white;
   overflow: hidden;
   transition: 0.4s;
+  cursor: pointer;
 }
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 8px 12px gray;
+}
+
 .card::after {
   content: "";
   transform: rotate(135deg);
@@ -52,7 +60,7 @@ main {
   );
   left: -1700px;
   top: 1500px;
-  animation: shine 6s ease infinite;
+  animation: shine 8s ease infinite;
 }
 
 @keyframes shine {
@@ -88,7 +96,7 @@ h2 {
   text-align: center;
   font-size: 24px;
   font-family: "Denk One", sans-serif;
-  color:white;
+  color: white;
   z-index: 1;
   margin-bottom: 50px;
   letter-spacing: 0.1em;
@@ -137,13 +145,43 @@ p {
 
 .imgPoke {
   width: 80%;
-  cursor: pointer;
   z-index: 1;
   margin-top: 30px;
   filter: drop-shadow(4px 6px 2px rgba(59, 59, 59, 0.655));
 }
 
-.card:hover {
-  transform: scale(1.1);
-  box-shadow: 4px 8px 12px gray;
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.856);
+  z-index: 3;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modalActive {
+  display: flex;
+}
+
+.modal > img {
+  cursor: pointer;
+}
+
+.specAll {
+  display: none;
+}
+
+.spec {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Denk One", sans-serif;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
 }

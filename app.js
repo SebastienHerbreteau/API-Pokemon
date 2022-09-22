@@ -4,32 +4,27 @@ let typeCouleur = {
   Vol: "background-image: url('assets/vol.png')",
   Poison: "background-image: url('assets/poison.png')",
   Sol: "background-image: url('assets/sol.png')",
-  Roche:
-    "background: rgb(255,205,111);background: linear-gradient(50deg, rgba(255,205,111,1) 30%, rgba(255,174,23,1) 50%, rgba(255,205,111,1) 70%)",
+  Roche: "background-image: url('assets/roche.png')",
   Insecte: "background-image: url('assets/insecte.png')",
-  Spectre:
-    "background: rgb(166,95,232);background: linear-gradient(50deg, rgba(166,95,232,1) 30%, rgba(183,0,237,1) 50%, rgba(166,95,232,1) 70%)",
-  Acier:
-    "background: rgb(88,175,153);background: linear-gradient(50deg, rgba(88,175,153,1) 30%, rgba(114,209,215,1) 50%, rgba(88,175,153,1) 70%)",
+  Spectre: "background-image: url('assets/spectre.png')",
+  Acier: "background-image: url('assets/acier.png')",
   Feu: "background-image: url('assets/feu.png')",
   Eau: "background-image: url('assets/eau.png')",
   Plante: "background-image: url('assets/plante.png')",
   Électrik: "background-image: url('assets/electrik.png')",
   Psy: "background-image: url('assets/psy.png')",
-  Glace:
-    "background: rgb(49,181,255);background: linear-gradient(50deg, rgba(49,181,255,1) 30%, rgba(190,252,255,1) 50%, rgba(49,181,255,1) 70%)",
-  Dragon:
-    "background: rgb(0,129,201);background: linear-gradient(50deg, rgba(0,129,201,1) 30%, rgba(2,0,163,1) 50%, rgba(0,129,201,1) 70%)",
-  Ténèbres:
-    "background: rgb(0,94,147);background: linear-gradient(50deg, rgba(0,94,147,1) 30%, rgba(1,0,59,1) 50%, rgba(0,94,147,1) 70%)",
+  Glace: "background-image: url('assets/glace.png')",
+  Dragon: "background-image: url('assets/dragon.png')",
+  Ténèbres: "background-image: url('assets/tenebres.png')",
   Fée: "background-image: url('assets/fee.png')",
 };
-// console.log(Object.keys(typeCouleur));
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/200")
+
+fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
       let main = document.querySelector("main");
+
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
           <img class="imgPoke" src="${pokemon.image}">
@@ -37,10 +32,54 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/200")
           <h3>#${pokemon.id}</h3>
           <div class="type">${type(pokemon)}
           </div>
+          <div class="specAll">
+          <div class="spec HP">HP ${pokemon.stats.HP}
+          </div>
+          <div class="spec specialAttaquetaque">Attaque ${pokemon.stats.attack}
+          </div>
+          <div class="spec specialAttaquefense">Défense ${pokemon.stats.defense}
+          </div>
+          <div class="spec specialAttaque">Attaque spéciale ${
+            pokemon.stats.special_attack
+          }
+          </div>
+          <div class="spec specialDefense">Défense spéciale ${
+            pokemon.stats.special_defense
+          }
+          </div>
+          <div class="spec vitesse">Vitesse ${pokemon.stats.speed}
+          </div>
+          </div>
         </div>
         `;
-    }
-  });
+    } //--------------------------------------------------------------------------fin de boucle-----------------------------------------------------
+
+    //----------------------------------------------------------------------modal----------------------------------------------------------------
+    let cards = document.querySelectorAll(".card");
+    let modal = document.querySelector(".modal");
+    let imgModal = document.querySelector(".modal>img");
+    let spec = document.querySelector(".spec");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        console.log(card.lastElementChild);
+        modal.classList.add("modalActive");
+        imgModal.setAttribute(
+          "src",
+          card.firstElementChild.getAttribute("src")
+        );
+        spec.innerHTML = card.lastElementChild;
+      });
+    });
+
+    window.onclick = function (e) {
+      if (e.target == modal || e.target == imgModal) {
+        modal.classList.remove("modalActive");
+      }
+    };
+
+    //------------------------------------------------------------------fin modal--------------------------------------------------------------
+  }); //-----------------------------------------------------------------------------fin de then---------------------------------------------------------
 
 function type(pokemon) {
   if (pokemon.apiTypes[1] == undefined) {
@@ -52,9 +91,10 @@ function type(pokemon) {
                 <p>${pokemon.apiTypes[1].name}</p>`;
   }
 }
-
+//----------pokemon correspond à l'élément destructuré de pokebase--------------------------
 function bgType1(pokemon) {
   for (const [key, value] of Object.entries(typeCouleur)) {
+    //--------toutes les entrées de l'objet (typeCouleur), sont tranformées en tableau [clé,valeur]
     if (pokemon.apiTypes[1] == undefined) {
       if (pokemon.apiTypes[0].name == [key]) return [value];
     } else if (pokemon.apiTypes[1] !== undefined) {
