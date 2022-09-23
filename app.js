@@ -19,7 +19,7 @@ let typeCouleur = {
   Fée: "background-image: url('assets/fee.png')",
 };
 
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/20")
+fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
@@ -50,7 +50,7 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/20")
                 </div>
                 <div class="spec vitesse">Vitesse : ${pokemon.stats.speed}
                 </div>
-                <div class="spec res">Resistances/Faiblesses : 
+                <div class="spec res"><p class="titreRes">Resistances/Faiblesses</p> 
                 <br>
                   ${resistN(pokemon)}
                 
@@ -110,10 +110,14 @@ function bgType1(pokemon) {
 
 function resistN(pokemon) {
   let recup = "";
+
   for (pokeDam of pokemon.apiResistances) {
     recupName = pokeDam.name;
-    recupDamage = pokeDam.damage_relation;
-    recup += `<div>${recupName} : ${recupDamage}</div><br>`;
+    let recupDamage = pokeDam.damage_relation;
+
+    if (!pokeDam.damage_relation.includes("neutral")) {
+      recup += `<div>${recupName} : ${recupDamage}</div><br>`;
+    }
   }
   return recup;
 }

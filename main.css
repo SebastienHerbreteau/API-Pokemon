@@ -96,7 +96,7 @@ header {
   font-size: 24px;
   font-family: "Denk One", sans-serif;
   color: white;
-  z-index: 1;
+  z-index: -11;
   margin-bottom: 50px;
   letter-spacing: 0.1em;
   text-shadow: 1px 2px 2px black;
@@ -166,8 +166,11 @@ p {
 }
 
 .imgPokeModal {
-  width: 500px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 3;
+  filter: drop-shadow(4px 6px 2px rgba(0, 0, 0, 0.655));
 }
 
 .spec {
@@ -181,18 +184,25 @@ p {
   text-shadow: 1px 2px 2px black;
   display: flex;
   justify-content: center;
+  flex-direction: row;
 }
 
+.specAll {
+  display: flex;
+  flex-direction: column;
+}
 .h2Modal {
-  grid-area: a;
   text-transform: uppercase;
   text-align: center;
-  font-size: 42px;
+  font-size: 220px;
   font-family: "Denk One", sans-serif;
   color: white;
-  letter-spacing: 0.1em;
-  text-shadow: 1px 2px 2px black;
-  margin-bottom: 30px;
+
+  text-shadow: 8px 8px 8px black;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 65%;
 }
 
 .typeModal {
@@ -202,6 +212,7 @@ p {
   gap: 30px;
   align-items: center;
   margin-bottom: 30px;
+  text-shadow: 8px 8px 8px black;
 }
 
 .close {
@@ -211,10 +222,21 @@ p {
   filter: invert(1);
 }
 .res {
+  margin-top: 20px;
   font-size: 12px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
+  font-family: "Denk One", sans-serif;
+  color: white;
+  display: none;
+}
+
+.res > div {
+  font-family: "Denk One", sans-serif;
+  color: white;
 }
 
 @media screen and (max-device-width: 425px) {
