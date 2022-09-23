@@ -22,7 +22,7 @@ main {
   margin-top: 15%;
 }
 .card {
-  height: fit-content;
+  height: 370px;
   width: 250px;
   background: wheat;
   padding-top: 10px;
@@ -31,7 +31,6 @@ main {
   box-shadow: 2px 4px 6px gray;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   position: relative;
   border: 8px solid white;
@@ -91,7 +90,7 @@ header {
   filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.655));
 }
 
-h2 {
+.nom {
   text-transform: uppercase;
   text-align: center;
   font-size: 24px;
@@ -101,9 +100,6 @@ h2 {
   margin-bottom: 50px;
   letter-spacing: 0.1em;
   text-shadow: 1px 2px 2px black;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 20px;
 }
 
 h3 {
@@ -162,26 +158,80 @@ p {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  justify-content: center;
 }
 
 .modalActive {
   display: flex;
 }
 
-.modal > img {
-  cursor: pointer;
-}
-
-.specAll {
-  display: none;
+.imgPokeModal {
+  width: 500px;
+  z-index: 3;
 }
 
 .spec {
+  width: 400px;
   text-transform: uppercase;
-  text-align: center;
+  text-align: end;
   font-size: 28px;
   font-family: "Denk One", sans-serif;
   color: white;
   letter-spacing: 0.1em;
   text-shadow: 1px 2px 2px black;
+  display: flex;
+  justify-content: center;
+}
+
+.h2Modal {
+  grid-area: a;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 42px;
+  font-family: "Denk One", sans-serif;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
+  margin-bottom: 30px;
+}
+
+.typeModal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.close {
+  width: 50px;
+  top: 40px;
+  position: absolute;
+  filter: invert(1);
+}
+.res {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-device-width: 425px) {
+  .modalActive {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imgPokeModal {
+    width: 80%;
+    z-index: 3;
+  }
+
+  .close {
+    width: 80px;
+    top: 60px;
+    position: absolute;
+    filter: invert(1);
+  }
 }

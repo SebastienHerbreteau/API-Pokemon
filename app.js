@@ -19,61 +19,66 @@ let typeCouleur = {
   Fée: "background-image: url('assets/fee.png')",
 };
 
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
+fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/20")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
       let main = document.querySelector("main");
-
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
-          <img class="imgPoke" src="${pokemon.image}">
-          <h2>${pokemon.name}</h2>
-          <h3>#${pokemon.id}</h3>
-          <div class="type">${type(pokemon)}
-          </div>
-          <div class="specAll">
-          <div class="spec HP">HP ${pokemon.stats.HP}
-          </div>
-          <div class="spec specialAttaquetaque">Attaque ${pokemon.stats.attack}
-          </div>
-          <div class="spec specialAttaquefense">Défense ${pokemon.stats.defense}
-          </div>
-          <div class="spec specialAttaque">Attaque spéciale ${
-            pokemon.stats.special_attack
-          }
-          </div>
-          <div class="spec specialDefense">Défense spéciale ${
-            pokemon.stats.special_defense
-          }
-          </div>
-          <div class="spec vitesse">Vitesse ${pokemon.stats.speed}
-          </div>
-          </div>
+            <img class="imgPoke" src="${pokemon.image}">
+            <h2 class="nom">${pokemon.name}</h2>
+            <h3>#${pokemon.id}</h3>
+            <div class="type">${type(pokemon)}</div>
+            <div class="specAll">
+                <h2 class="h2Modal">${pokemon.name}</h2>
+                <div class="typeModal">${type(pokemon)}
+                </div>
+                <div class="spec HP">HP : ${pokemon.stats.HP}
+                </div>
+                <div class="spec Attaque">Attaque : ${pokemon.stats.attack}
+                </div>
+                <div class="spec Defense">Défense : ${pokemon.stats.defense}
+                </div>
+                <div class="spec specialAttaque">Attaque spéciale : ${
+                  pokemon.stats.special_attack
+                }
+                </div>
+                <div class="spec specialDefense">Défense spéciale : ${
+                  pokemon.stats.special_defense
+                }
+                </div>
+                <div class="spec vitesse">Vitesse : ${pokemon.stats.speed}
+                </div>
+                <div class="spec res">Resistances/Faiblesses : 
+                <br>
+                  ${resistN(pokemon)}
+                
+                </div>
+            </div>
         </div>
         `;
     } //--------------------------------------------------------------------------fin de boucle-----------------------------------------------------
-
     //----------------------------------------------------------------------modal----------------------------------------------------------------
     let cards = document.querySelectorAll(".card");
     let modal = document.querySelector(".modal");
     let imgModal = document.querySelector(".modal>img");
     let spec = document.querySelector(".spec");
+    let close = document.querySelector(".close");
 
     cards.forEach((card) => {
       card.addEventListener("click", () => {
-        console.log(card.lastElementChild);
         modal.classList.add("modalActive");
         imgModal.setAttribute(
           "src",
           card.firstElementChild.getAttribute("src")
         );
-        spec.innerHTML = card.lastElementChild;
+        spec.innerHTML = card.lastElementChild.outerHTML;
       });
     });
 
     window.onclick = function (e) {
-      if (e.target == modal || e.target == imgModal) {
+      if (e.target == modal || e.target == close || e.target == imgModal) {
         modal.classList.remove("modalActive");
       }
     };
@@ -101,4 +106,14 @@ function bgType1(pokemon) {
       if (pokemon.apiTypes[1].name == [key]) return [value];
     }
   }
+}
+
+function resistN(pokemon) {
+  let recup = "";
+  for (pokeDam of pokemon.apiResistances) {
+    recupName = pokeDam.name;
+    recupDamage = pokeDam.damage_relation;
+    recup += `<div>${recupName} : ${recupDamage}</div><br>`;
+  }
+  return recup;
 }
