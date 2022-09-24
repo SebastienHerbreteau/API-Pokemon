@@ -19,7 +19,7 @@ let typeCouleur = {
   Fée: "background-image: url('assets/fee.png')",
 };
 
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
+fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/200")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
@@ -29,32 +29,44 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
             <img class="imgPoke" src="${pokemon.image}">
             <h2 class="nom">${pokemon.name}</h2>
             <h3>#${pokemon.id}</h3>
-            <div class="type">${type(pokemon)}</div>
-            <div class="specAll">
-                <h2 class="h2Modal">${pokemon.name}</h2>
+            
+            <div class="specModal">
+
                 <div class="typeModal">${type(pokemon)}
                 </div>
-                <div class="spec HP">HP : ${pokemon.stats.HP}
+
+                <div class="spec">
+
+                        <div class="HP">HP : ${pokemon.stats.HP}
+                        </div>
+
+                        <div class="attaque">Attaque : ${pokemon.stats.attack}
+                        </div>
+
+                        <div class="defense">Défense : ${pokemon.stats.defense}
+                        </div>
+
+                        <div class="specialAttaque">Attaque spéciale : ${
+                              pokemon.stats.special_attack
+                            }
+                        </div>
+
+                        <div class="specialDefense">Défense spéciale : ${
+                              pokemon.stats.special_defense
+                            }
+                        </div>
+
+                        <div class="vitesse">Vitesse : ${pokemon.stats.speed}
+                        </div>
+
                 </div>
-                <div class="spec Attaque">Attaque : ${pokemon.stats.attack}
+
+                <div class="res"> 
+                  ${resistance(pokemon)}
                 </div>
-                <div class="spec Defense">Défense : ${pokemon.stats.defense}
-                </div>
-                <div class="spec specialAttaque">Attaque spéciale : ${
-                  pokemon.stats.special_attack
-                }
-                </div>
-                <div class="spec specialDefense">Défense spéciale : ${
-                  pokemon.stats.special_defense
-                }
-                </div>
-                <div class="spec vitesse">Vitesse : ${pokemon.stats.speed}
-                </div>
-                <div class="spec res"><p class="titreRes">Resistances/Faiblesses</p> 
-                <br>
-                  ${resistN(pokemon)}
                 
-                </div>
+                <h2 class="h2Modal">${pokemon.name}</h2>
+                
             </div>
         </div>
         `;
@@ -63,7 +75,7 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
     let cards = document.querySelectorAll(".card");
     let modal = document.querySelector(".modal");
     let imgModal = document.querySelector(".modal>img");
-    let spec = document.querySelector(".spec");
+    let importModal = document.querySelector(".import");
     let close = document.querySelector(".close");
 
     cards.forEach((card) => {
@@ -73,7 +85,7 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
           "src",
           card.firstElementChild.getAttribute("src")
         );
-        spec.innerHTML = card.lastElementChild.outerHTML;
+        importModal.innerHTML = card.lastElementChild.outerHTML;
       });
     });
 
@@ -88,12 +100,14 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
 
 function type(pokemon) {
   if (pokemon.apiTypes[1] == undefined) {
-    return `<img class="typeImage" src="${pokemon.apiTypes[0].image}"/>
-                <p>${pokemon.apiTypes[0].name}</p>`;
+    return `<div class="type1"><img class="typeImage" src="${pokemon.apiTypes[0].image}"/>
+                <p>${pokemon.apiTypes[0].name}</p></div>`;
   } else {
-    return `<img class="typeImage" src="${pokemon.apiTypes[0].image}"/>
-                <p>${pokemon.apiTypes[0].name}</p> <img class="typeImage" src="${pokemon.apiTypes[1].image}"/>
-                <p>${pokemon.apiTypes[1].name}</p>`;
+    return `<div class="type1"><img class="typeImage" src="${pokemon.apiTypes[0].image}"/>
+                <p>${pokemon.apiTypes[0].name}</p></div> 
+
+            <div class="type2"><img class="typeImage" src="${pokemon.apiTypes[1].image}"/>
+                <p>${pokemon.apiTypes[1].name}</p></div>`;
   }
 }
 //----------pokemon correspond à l'élément destructuré de pokebase--------------------------
@@ -108,7 +122,7 @@ function bgType1(pokemon) {
   }
 }
 
-function resistN(pokemon) {
+function resistance(pokemon) {
   let recup = "";
 
   for (pokeDam of pokemon.apiResistances) {
@@ -116,7 +130,7 @@ function resistN(pokemon) {
     let recupDamage = pokeDam.damage_relation;
 
     if (!pokeDam.damage_relation.includes("neutral")) {
-      recup += `<div>${recupName} : ${recupDamage}</div><br>`;
+      recup += `<p>${recupName} : ${recupDamage}</p>`;
     }
   }
   return recup;
