@@ -88,7 +88,6 @@ header {
   height: 100%;
   width: 100%;
   filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.655));
-  
 }
 
 .nom {
@@ -97,7 +96,7 @@ header {
   font-size: 24px;
   font-family: "Denk One", sans-serif;
   color: white;
-  
+
   margin-top: 50px;
   letter-spacing: 0.1em;
   text-shadow: 1px 2px 2px black;
@@ -130,23 +129,20 @@ p {
   align-items: center;
   height: fit-content;
   z-index: 1;
-  
 }
 
-.type1, .type2{
+.type1,
+.type2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  
-  
 }
 
-.type1>p{
+.type1 > p {
   font-size: 35px;
 }
 
-.type2>p{
+.type2 > p {
   font-size: 35px;
 }
 
@@ -175,7 +171,6 @@ p {
   justify-content: center;
   align-items: center;
   cursor: pointer;
- 
 }
 
 .modalActive {
@@ -190,8 +185,12 @@ p {
   filter: drop-shadow(4px 6px 2px rgba(0, 0, 0, 0.655));
 }
 
-
-.HP, .attaque, .defense, .specialAttaque, .specialDefense, .vitesse{
+.HP,
+.attaque,
+.defense,
+.specialAttaque,
+.specialDefense,
+.vitesse {
   text-transform: uppercase;
   font-size: 22px;
   font-family: "Denk One", sans-serif;
@@ -200,39 +199,35 @@ p {
   text-shadow: 1px 2px 2px black;
 }
 
-.spec{
-  
+.spec {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   grid-area: spec;
-
 }
 
 .specModal {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 25% 25% 25% 25%;
-  grid-template-areas: 
-  ". . typemodal . ."
-  ". spec . resistances ."
-  ". spec . resistances ."
-  ". h2modal h2modal h2modal .";
+  grid-template-areas:
+    ". . typemodal . ."
+    ". spec . resistances ."
+    ". spec . resistances ."
+    ". h2modal h2modal h2modal .";
   height: 100vh;
   width: 100vw;
-  
-  
 }
 .h2Modal {
   grid-area: h2modal;
   display: flex;
   text-transform: uppercase;
-  justify-content:center;
+  justify-content: center;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   font-size: 1200%;
   font-family: "Denk One", sans-serif;
   color: white;
@@ -240,7 +235,6 @@ p {
   width: 100%;
   height: 100%;
   margin-top: -100px;
-  
 }
 
 .typeModal {
@@ -254,7 +248,6 @@ p {
   gap: 30px;
   position: absolute;
   bottom: 7%;
-  
 }
 
 .close {
@@ -270,18 +263,72 @@ p {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content:center;
-  flex-direction: column-reverse;
-  
+  text-align: right;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
 }
 
-.res>p{
+.res > p,
+span {
   text-transform: uppercase;
   font-size: 22px;
   font-family: "Denk One", sans-serif;
   color: white;
   letter-spacing: 0.1em;
   text-shadow: 1px 2px 2px black;
+}
+
+.rouge {
+  color: red;
+}
+
+.orange {
+  color: rgb(255, 139, 6);
+}
+
+.vert {
+  color: green;
+}
+
+.silver {
+  color: silver;
+  display: inline-block;
+  position: relative;
+  filter: contrast(1.8);
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 2s linear infinite;
+}
+
+.gold {
+  color: goldenrod;
+  display: inline-block;
+  position: relative;
+  filter: contrast(1.8);
+
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 1.8s linear infinite;
+}
+
+@keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  to {
+    -webkit-mask-position: -50%;
+  }
 }
 
 @media screen and (max-device-width: 425px) {

@@ -19,14 +19,15 @@ let typeCouleur = {
   Fée: "background-image: url('assets/fee.png')",
 };
 
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/200")
+let echelleCouleur = {};
+fetch("100.json")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
       let main = document.querySelector("main");
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
-            <img class="imgPoke" src="${pokemon.image}">
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
             <h2 class="nom">${pokemon.name}</h2>
             <h3>#${pokemon.id}</h3>
             
@@ -47,13 +48,13 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/200")
                         </div>
 
                         <div class="specialAttaque">Attaque spéciale : ${
-                              pokemon.stats.special_attack
-                            }
+                          pokemon.stats.special_attack
+                        }
                         </div>
 
                         <div class="specialDefense">Défense spéciale : ${
-                              pokemon.stats.special_defense
-                            }
+                          pokemon.stats.special_defense
+                        }
                         </div>
 
                         <div class="vitesse">Vitesse : ${pokemon.stats.speed}
@@ -70,7 +71,8 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/200")
             </div>
         </div>
         `;
-    } //--------------------------------------------------------------------------fin de boucle-----------------------------------------------------
+    }
+    //--------------------------------------------------------------------------fin de boucle-----------------------------------------------------
     //----------------------------------------------------------------------modal----------------------------------------------------------------
     let cards = document.querySelectorAll(".card");
     let modal = document.querySelector(".modal");
@@ -126,12 +128,34 @@ function resistance(pokemon) {
   let recup = "";
 
   for (pokeDam of pokemon.apiResistances) {
-    recupName = pokeDam.name;
+    let recupName = pokeDam.name;
     let recupDamage = pokeDam.damage_relation;
+
+    if (pokeDam.damage_relation == "twice_vulnerable") {
+      recupDamage = '<span class="rouge">Très vulnérable</span>';
+    }
+
+    if (pokeDam.damage_relation == "vulnerable") {
+      recupDamage = '<span class="orange">Vulnérable</span>';
+    }
+
+    if (pokeDam.damage_relation == "resistant") {
+      recupDamage = '<span class="vert">Résistant</span>';
+    }
+
+    if (pokeDam.damage_relation == "twice_resistant") {
+      recupDamage = '<span class="silver">Très résistant</span>';
+    }
+
+    if (pokeDam.damage_relation == "immune") {
+      recupDamage = '<span class="gold">Immunisé</span>';
+    }
 
     if (!pokeDam.damage_relation.includes("neutral")) {
       recup += `<p>${recupName} : ${recupDamage}</p>`;
     }
+    console.log(recupDamage);
   }
+
   return recup;
 }
