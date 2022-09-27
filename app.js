@@ -87,6 +87,7 @@ fetch("100.json")
     let close = document.querySelector(".close");
     let right = document.querySelector(".right");
     let left = document.querySelector(".left");
+    
 
     window.onclick = function (e) {
       if (e.target == close || e.target == imgModal) {
@@ -95,14 +96,32 @@ fetch("100.json")
     };
 
     cards.forEach((card) => {
+      
       card.addEventListener("click", () => {
+        
+        const nextFirst = card.nextElementSibling.firstElementChild;
+        const nextLast = card.nextElementSibling.lastElementChild;
+        const previousFirst = card.previousElementSibling.firstElementChild;
+        const previousLast = card.previousElementSibling.lastElementChild;
+
         modal.classList.add("modalActive");
         imgModal.setAttribute(
           "src",
           card.firstElementChild.getAttribute("src")
         );
         importModal.innerHTML = card.lastElementChild.outerHTML;
+
+        left.addEventListener("click", () => {
+          imgModal.setAttribute("src", previousFirst.getAttribute("src"));
+          importModal.innerHTML = previousLast.outerHTML;
+        });
+  
+        right.addEventListener("click", () => {
+          imgModal.setAttribute("src", nextFirst.getAttribute("src"));
+          importModal.innerHTML = nextLast.outerHTML;
+        });
       });
+      
     });
 
     //------------------------------------------------------------------fin modal--------------------------------------------------------------
