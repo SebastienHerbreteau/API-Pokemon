@@ -170,7 +170,6 @@ p {
   display: none;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .modalActive {
@@ -183,6 +182,7 @@ p {
   margin-right: auto;
   z-index: 3;
   filter: drop-shadow(4px 6px 2px rgba(0, 0, 0, 0.655));
+  cursor: pointer;
 }
 
 .HP,
@@ -241,7 +241,6 @@ p {
   grid-area: typemodal;
   display: flex;
   justify-content: center;
-  height: 100%;
   width: 100%;
   align-items: end;
   text-shadow: 8px 8px 8px black;
@@ -256,8 +255,26 @@ p {
   position: absolute;
   filter: invert(1);
   z-index: 4;
+  cursor: pointer;
 }
 
+.right {
+  position: absolute;
+  right: 5%;
+  filter: invert(1);
+  width: 5%;
+  cursor: pointer;
+  z-index: 10;
+}
+.left {
+  position: absolute;
+  left: 5%;
+  filter: invert(1);
+  width: 5%;
+  cursor: pointer;
+  transform: rotate(180deg);
+  z-index: 10;
+}
 .res {
   grid-area: resistances;
   height: 100%;
@@ -267,10 +284,6 @@ p {
   justify-content: center;
   align-items: flex-end;
   flex-direction: column;
-}
-
-.res > p,
-span {
   text-transform: uppercase;
   font-size: 22px;
   font-family: "Denk One", sans-serif;
@@ -279,20 +292,50 @@ span {
   text-shadow: 1px 2px 2px black;
 }
 
+.ff {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.ff > span {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 .rouge {
   color: red;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Denk One", sans-serif;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
 }
 
 .orange {
   color: rgb(255, 139, 6);
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Denk One", sans-serif;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
 }
 
 .vert {
   color: green;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Denk One", sans-serif;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
 }
 
 .silver {
   color: silver;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Denk One", sans-serif;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
   display: inline-block;
   position: relative;
   filter: contrast(1.8);
@@ -308,6 +351,11 @@ span {
 
 .gold {
   color: goldenrod;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Denk One", sans-serif;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
   display: inline-block;
   position: relative;
   filter: contrast(1.8);

@@ -63,7 +63,13 @@ fetch("100.json")
                 </div>
 
                 <div class="res"> 
-                  ${resistance(pokemon)}
+
+                <div class="immunise ff">${immunise(pokemon)}</div>
+                <div class="tresResistant ff">${tresResistant(pokemon)}</div>
+                <div class="resistant ff">${resistant(pokemon)}</div>
+                <div class="vulnerable ff">${vulnerable(pokemon)}</div>
+                <div class="tresVulnerable ff">${tresVulnerable(pokemon)}</div>
+
                 </div>
                 
                 <h2 class="h2Modal">${pokemon.name}</h2>
@@ -79,6 +85,14 @@ fetch("100.json")
     let imgModal = document.querySelector(".modal>img");
     let importModal = document.querySelector(".import");
     let close = document.querySelector(".close");
+    let right = document.querySelector(".right");
+    let left = document.querySelector(".left");
+
+    window.onclick = function (e) {
+      if (e.target == close || e.target == imgModal) {
+        modal.classList.remove("modalActive");
+      }
+    };
 
     cards.forEach((card) => {
       card.addEventListener("click", () => {
@@ -90,12 +104,6 @@ fetch("100.json")
         importModal.innerHTML = card.lastElementChild.outerHTML;
       });
     });
-
-    window.onclick = function (e) {
-      if (e.target == modal || e.target == close || e.target == imgModal) {
-        modal.classList.remove("modalActive");
-      }
-    };
 
     //------------------------------------------------------------------fin modal--------------------------------------------------------------
   }); //-----------------------------------------------------------------------------fin de then---------------------------------------------------------
@@ -124,7 +132,67 @@ function bgType1(pokemon) {
   }
 }
 
-function resistance(pokemon) {
+function immunise(pokemon) {
+  let recup = "";
+
+  for (pokeDam of pokemon.apiResistances) {
+    let recupName = pokeDam.name;
+    let recupDamage = pokeDam.damage_relation;
+
+    if (pokeDam.damage_relation == "immune") {
+      recupDamage = `<span><p>${recupName} : </p><span class="gold">Immunisé</span></span>`;
+      recup += recupDamage;
+    }
+  }
+  return recup;
+}
+
+function tresResistant(pokemon) {
+  let recup = "";
+
+  for (pokeDam of pokemon.apiResistances) {
+    let recupName = pokeDam.name;
+    let recupDamage = pokeDam.damage_relation;
+
+    if (pokeDam.damage_relation == "twice_resistant") {
+      recupDamage = `<span><p>${recupName} : </p><span class="silver">Très résistant</span></span>`;
+      recup += recupDamage;
+    }
+  }
+  return recup;
+}
+
+function resistant(pokemon) {
+  let recup = "";
+
+  for (pokeDam of pokemon.apiResistances) {
+    let recupName = pokeDam.name;
+    let recupDamage = pokeDam.damage_relation;
+
+    if (pokeDam.damage_relation == "resistant") {
+      recupDamage = `<span><p>${recupName} : </p><span class="vert">Résistant</span></span>`;
+      recup += recupDamage;
+    }
+  }
+  return recup;
+}
+
+function vulnerable(pokemon) {
+  let recup = "";
+
+  for (pokeDam of pokemon.apiResistances) {
+    let recupName = pokeDam.name;
+    let recupDamage = pokeDam.damage_relation;
+
+    if (pokeDam.damage_relation == "vulnerable") {
+      recupDamage = `<span><p>${recupName} : </p><span class="orange">Vulnérable</span></span>`;
+      recup += recupDamage;
+    }
+  }
+  return recup;
+}
+
+function tresVulnerable(pokemon) {
   let recup = "";
 
   for (pokeDam of pokemon.apiResistances) {
@@ -132,30 +200,9 @@ function resistance(pokemon) {
     let recupDamage = pokeDam.damage_relation;
 
     if (pokeDam.damage_relation == "twice_vulnerable") {
-      recupDamage = '<span class="rouge">Très vulnérable</span>';
+      recupDamage = `<span><p>${recupName} : </p><span class="rouge">Très vulnérable</span></span>`;
+      recup += recupDamage;
     }
-
-    if (pokeDam.damage_relation == "vulnerable") {
-      recupDamage = '<span class="orange">Vulnérable</span>';
-    }
-
-    if (pokeDam.damage_relation == "resistant") {
-      recupDamage = '<span class="vert">Résistant</span>';
-    }
-
-    if (pokeDam.damage_relation == "twice_resistant") {
-      recupDamage = '<span class="silver">Très résistant</span>';
-    }
-
-    if (pokeDam.damage_relation == "immune") {
-      recupDamage = '<span class="gold">Immunisé</span>';
-    }
-
-    if (!pokeDam.damage_relation.includes("neutral")) {
-      recup += `<p>${recupName} : ${recupDamage}</p>`;
-    }
-    console.log(recupDamage);
   }
-
   return recup;
 }
