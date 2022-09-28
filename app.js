@@ -57,12 +57,31 @@ fetch("100.json")
 
         right.addEventListener("click",()=>{
           id++;
+          console.log(id)
           fetchPokemon(id)
           })
 
         left.addEventListener("click",()=>{
           id--;
+          console.log(id)
           fetchPokemon(id)
+          })
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowRight"){
+          id++;
+          console.log(e.code)
+          fetchPokemon(id)
+          }
+          })
+        
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowLeft"){
+          id--;
+          console.log(id)
+          fetchPokemon(id)
+          }
           })
 
         
@@ -205,3 +224,4 @@ function tresVulnerable(pokemon) {
   }
   return recup;
 }
+

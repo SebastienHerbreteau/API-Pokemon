@@ -9,17 +9,16 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  position: relative;
   background-color: bisque;
   overflow-x: hidden;
 }
 
 main {
-  margin-top: 60px;
+  
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 15%;
+  margin-top: 20%;
   position: relative;
 }
 .card {
@@ -70,17 +69,55 @@ main {
 }
 
 header {
-  background-color: rgba(255, 255, 255, 0.514);
-  display: flex;
-  justify-content: center;
-}
-.pokedeck {
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   display: flex;
-  margin-top: 30px;
   justify-content: center;
-  position: fixed;
+  align-items: center;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  z-index: 3;
+}
+
+.menu{
+  width: 20%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.bottom{
+  width: 40%;
+  z-index: 4;
+  filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.534));
+  position: absolute;
+  
+}
+
+.top{
+  width: 40%;
+  z-index: 5;
+  position: absolute;
+  cursor: pointer;
+  transition:0.4s;
+  
+}
+
+.top:active {
+  transform: rotate(180deg);
+  transition:0.4s;
+  
+}
+
+
+
+.pokedeck {
+  width: 35%;
+  display: flex;
+  justify-content: center;
   z-index: 2;
 }
 
@@ -96,7 +133,6 @@ header {
   font-size: 24px;
   font-family: "Denk One", sans-serif;
   color: white;
-
   margin-top: 50px;
   letter-spacing: 0.1em;
   text-shadow: 1px 2px 2px black;
@@ -114,6 +150,7 @@ h3 {
   z-index: 1;
   text-shadow: 1px 2px 2px black;
 }
+
 p {
   font-family: "Denk One", sans-serif;
   text-align: center;
