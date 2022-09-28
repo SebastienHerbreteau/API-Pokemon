@@ -19,62 +19,18 @@ let typeCouleur = {
   Fée: "background-image: url('assets/fee.png')",
 };
 
-let echelleCouleur = {};
+
 fetch("100.json")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
       let main = document.querySelector("main");
+      
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
             <h2 class="nom">${pokemon.name}</h2>
-            <h3>#${pokemon.id}</h3>
-            
-            <div class="specModal">
-
-                <div class="typeModal">${type(pokemon)}
-                </div>
-
-                <div class="spec">
-
-                        <div class="HP">HP : ${pokemon.stats.HP}
-                        </div>
-
-                        <div class="attaque">Attaque : ${pokemon.stats.attack}
-                        </div>
-
-                        <div class="defense">Défense : ${pokemon.stats.defense}
-                        </div>
-
-                        <div class="specialAttaque">Attaque spéciale : ${
-                          pokemon.stats.special_attack
-                        }
-                        </div>
-
-                        <div class="specialDefense">Défense spéciale : ${
-                          pokemon.stats.special_defense
-                        }
-                        </div>
-
-                        <div class="vitesse">Vitesse : ${pokemon.stats.speed}
-                        </div>
-
-                </div>
-
-                <div class="res"> 
-
-                <div class="immunise ff">${immunise(pokemon)}</div>
-                <div class="tresResistant ff">${tresResistant(pokemon)}</div>
-                <div class="resistant ff">${resistant(pokemon)}</div>
-                <div class="vulnerable ff">${vulnerable(pokemon)}</div>
-                <div class="tresVulnerable ff">${tresVulnerable(pokemon)}</div>
-
-                </div>
-                
-                <h2 class="h2Modal">${pokemon.name}</h2>
-                
-            </div>
+            <h3>${pokemon.id}</h3>
         </div>
         `;
     }
@@ -82,50 +38,75 @@ fetch("100.json")
     //----------------------------------------------------------------------modal----------------------------------------------------------------
     let cards = document.querySelectorAll(".card");
     let modal = document.querySelector(".modal");
-    let imgModal = document.querySelector(".modal>img");
-    let importModal = document.querySelector(".import");
     let close = document.querySelector(".close");
     let right = document.querySelector(".right");
     let left = document.querySelector(".left");
     
 
     window.onclick = function (e) {
-      if (e.target == close || e.target == imgModal) {
+     
+      if (e.target == close || e.target.id == "ipm") {
         modal.classList.remove("modalActive");
       }
     };
-
+    
     cards.forEach((card) => {
-      
       card.addEventListener("click", () => {
-        
-        const nextFirst = card.nextElementSibling.firstElementChild;
-        const nextLast = card.nextElementSibling.lastElementChild;
-        const previousFirst = card.previousElementSibling.firstElementChild;
-        const previousLast = card.previousElementSibling.lastElementChild;
-
         modal.classList.add("modalActive");
-        imgModal.setAttribute(
-          "src",
-          card.firstElementChild.getAttribute("src")
-        );
-        importModal.innerHTML = card.lastElementChild.outerHTML;
+        let id = card.lastElementChild.textContent; 
+        fetchPokemon(id);
 
-        left.addEventListener("click", () => {
-          imgModal.setAttribute("src", previousFirst.getAttribute("src"));
-          importModal.innerHTML = previousLast.outerHTML;
-        });
-  
-        right.addEventListener("click", () => {
-          imgModal.setAttribute("src", nextFirst.getAttribute("src"));
-          importModal.innerHTML = nextLast.outerHTML;
-        });
-      });
-      
-    });
+        right.addEventListener("click",()=>{
+          id++;
+          fetchPokemon(id)
+          })
+
+        left.addEventListener("click",()=>{
+          id--;
+          fetchPokemon(id)
+          })
+
+        
+
+        
+        
+    }); })
 
     //------------------------------------------------------------------fin modal--------------------------------------------------------------
-  }); //-----------------------------------------------------------------------------fin de then---------------------------------------------------------
+  }); 
+
+
+function fetchPokemon(id){
+   
+  fetch(`https://pokebuildapi.fr/api/v1/pokemon/${id}`)
+        .then((response) => response.json())
+        .then((pokemon) => {
+              let importation = document.querySelector(".importation");
+
+              importation.innerHTML = 
+          `<div class="specModal">
+              <div class="typeModal">${type(pokemon)}</div>
+              <div class="spec">
+                  <div class="HP">HP : ${pokemon.stats.HP}</div>
+                  <div class="attaque">Attaque : ${pokemon.stats.attack}</div>
+                  <div class="defense">Défense : ${pokemon.stats.defense}</div>
+                  <div class="specialAttaque">Attaque spéciale : ${pokemon.stats.special_attack}</div>
+                  <div class="specialDefense">Défense spéciale : ${pokemon.stats.special_defense}</div>
+                  <div class="vitesse">Vitesse : ${pokemon.stats.speed}</div>
+              </div>
+              <div class="res"> 
+                  <div class="immunise ff">${immunise(pokemon)}</div>
+                  <div class="tresResistant ff">${tresResistant(pokemon)}</div>
+                  <div class="resistant ff">${resistant(pokemon)}</div>
+                  <div class="vulnerable ff">${vulnerable(pokemon)}</div>
+                  <div class="tresVulnerable ff">${tresVulnerable(pokemon)}</div>
+              </div>
+              <img class="imgPokeModal" id="ipm" src="assets/pokemons/${pokemon.id}.png">
+              <h2 class="h2Modal">${pokemon.name}</h2>
+          </div>`
+}
+        )}
+
 
 function type(pokemon) {
   if (pokemon.apiTypes[1] == undefined) {
@@ -139,7 +120,7 @@ function type(pokemon) {
                 <p>${pokemon.apiTypes[1].name}</p></div>`;
   }
 }
-//----------pokemon correspond à l'élément destructuré de pokebase--------------------------
+
 function bgType1(pokemon) {
   for (const [key, value] of Object.entries(typeCouleur)) {
     //--------toutes les entrées de l'objet (typeCouleur), sont tranformées en tableau [clé,valeur]
