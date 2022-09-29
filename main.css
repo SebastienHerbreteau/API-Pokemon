@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Pokemon-Hollow;
+  font-family: "Denk One", sans-serif;
 }
 
 body {
@@ -18,7 +18,7 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 20%;
+  margin-top: 22%;
   position: relative;
 }
 .card {
@@ -74,45 +74,25 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 50px;
   left: 0px;
   z-index: 3;
 }
 
-.menu{
-  width: 20%;
-  height: 100px;
+
+
+.pokeball{
+  width: 6%;
+  z-index: 3;
+  filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.5));
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-}
-
-.bottom{
-  width: 40%;
-  z-index: 4;
-  filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.534));
   position: absolute;
-  
+  left: 64%;
+  top:7%;
 }
-
-.top{
-  width: 40%;
-  z-index: 5;
-  position: absolute;
-  cursor: pointer;
-  transition:0.4s;
-  
-}
-
-.top:active {
-  transform: rotate(180deg);
-  transition:0.4s;
-  
-}
-
-
 
 .pokedeck {
   width: 35%;
@@ -124,9 +104,68 @@ header {
 .pokedeck > img {
   height: 100%;
   width: 100%;
-  filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.655));
+  filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.658));
 }
 
+.containerInput{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 300px;
+  bottom: -60%;
+}
+
+.input{
+  width: 100%;
+  height: 100%;
+  bottom: -50px;
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 5px;
+  padding-left: 10px;
+  border: none;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  color: #356abc;
+}
+
+.input:focus{
+  outline: none;
+}
+
+.input::placeholder{
+  font-family: "Denk One", sans-serif;
+  color: #356abc;
+  opacity: 0.6;
+}
+
+.go{
+  height: 100%;
+  right: 0px;
+  cursor: pointer;
+  position: absolute;
+  padding: 5px;
+}
+
+.animation{
+  animation-name: zoom;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes zoom{
+0%{
+  transform: scale(1);
+}
+50%{
+  transform: scale(1.1);
+}
+100%{
+  transform: scale(1);
+}
+
+
+}
 .nom {
   text-transform: uppercase;
   text-align: center;

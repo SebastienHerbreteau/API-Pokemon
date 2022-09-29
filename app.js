@@ -51,26 +51,25 @@ fetch("100.json")
     
     cards.forEach((card) => {
       card.addEventListener("click", () => {
+        let importation = document.querySelector(".importation")
+        importation.textContent = "";
         modal.classList.add("modalActive");
         let id = card.lastElementChild.textContent; 
         fetchPokemon(id);
 
         right.addEventListener("click",()=>{
-          id++;
-          console.log(id)
+          id++; 
           fetchPokemon(id)
           })
 
         left.addEventListener("click",()=>{
           id--;
-          console.log(id)
           fetchPokemon(id)
           })
 
         window.addEventListener("keydown",(e)=>{
           if (e.code == "ArrowRight"){
           id++;
-          console.log(e.code)
           fetchPokemon(id)
           }
           })
@@ -79,7 +78,6 @@ fetch("100.json")
         window.addEventListener("keydown",(e)=>{
           if (e.code == "ArrowLeft"){
           id--;
-          console.log(id)
           fetchPokemon(id)
           }
           })
@@ -225,3 +223,14 @@ function tresVulnerable(pokemon) {
   return recup;
 }
 
+let input = document.querySelector(".input");
+let go = document.querySelector(".go")
+
+
+input.addEventListener("mouseover",()=>{
+  go.classList.add("animation")
+})
+
+input.addEventListener("mouseout",()=>{
+  go.classList.remove("animation")
+})
