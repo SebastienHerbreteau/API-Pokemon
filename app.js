@@ -27,7 +27,7 @@ fetch("100.json")
       let main = document.querySelector("main");
       
       main.innerHTML += `
-        <div class="card" style="${bgType1(pokemon)}">
+        <div class="card" style="${bgType1(pokemon)}; width:14%">
             <h3>${pokemon.id}</h3>
             <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
             <h2 class="nom">${pokemon.name}</h2>
@@ -50,30 +50,9 @@ fetch("100.json")
       }
     };
     
+
+
       cards.forEach((card) => {
-
-      let thumbnailPetit = document.querySelector(".thumbnailPetit")
-      let thumbnailGrand = document.querySelector(".thumbnailGrand")
-      let percentGrand = 0;
-      let percentPetit = 0;
-      let percentCurrent = 10;
-      
-      thumbnailGrand.addEventListener("click", ()=>{
-    
-        let size = percentGrand + "%";
-        console.log(percentGrand)
-          card.style.width = size; 
-          percentGrand += 2;
-})
-
-
-      thumbnailPetit.addEventListener("click", ()=>{
-        
-        let size = percentPetit + "%";
-        console.log(percentPetit)
-          card.style.width = size; 
-          percentPetit -= 2;
-})
 
       card.addEventListener("click", () => {
         let importation = document.querySelector(".importation")
