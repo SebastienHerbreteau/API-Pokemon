@@ -18,7 +18,7 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 22%;
+  margin-top: 17%;
   position: relative;
 }
 .card {
@@ -69,14 +69,14 @@ main {
 }
 
 header {
-  width: 100%;
-  height: fit-content;
+  width: 100vw;
+  height: 34vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: fixed;
-  top: 50px;
-  left: 0px;
+  top: 0;
+  left: 0;
   z-index: 3;
 }
 
@@ -89,7 +89,7 @@ header {
   height: 40px;
   position: absolute;
   background-color: #ed5564;
-  bottom: -60%;
+  bottom: 0;
   right: 20%;
   border-radius: 10px;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
@@ -104,8 +104,8 @@ header {
   transition: 0.4s;
 }
 
-.typePokemon:hover, .generationPokemon:hover{
-  transform: scale(1.02);
+.typePokemon:hover, .generationPokemon:hover, .thumbnailPetit:hover, .thumbnailGrand:hover{
+  transform: scale(1.05);
 }
 .pokeball{
   width: 6%;
@@ -115,20 +115,21 @@ header {
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 64%;
-  top:7%;
+  left: 63%;
+  top:6%;
 }
 
 .pokedeck {
   width: 35%;
   display: flex;
   justify-content: center;
-  z-index: 2;
+  margin-top: 20px;
 }
 
 .pokedeck > img {
   height: 100%;
   width: 100%;
+  z-index: 2;
   filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.658));
 }
 
@@ -138,7 +139,7 @@ header {
   flex-direction: row;
   justify-content: center;
   width: 300px;
-  bottom: -60%;
+  bottom: -0%;
 }
 
 .input{
@@ -172,24 +173,51 @@ header {
   padding: 5px;
 }
 
-.animation{
-  animation-name: zoom;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
+.thumbnailGrand{
+  
+  height: 12%;
+  position: absolute;
+  background-color: #ed5564;
+  bottom: 0;
+  right: 6.1%;
+  border-radius: 10px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
-@keyframes zoom{
-0%{
-  transform: scale(1);
-}
-50%{
-  transform: scale(1.1);
-}
-100%{
-  transform: scale(1);
+.thumbnailPetit{
+  height: 10%;
+  position: absolute;
+  background-color: #ed5564;
+  bottom: 0;
+  right: 8.5%;
+  border-radius: 10px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
-
+.containerThumbnail{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-color: #ed5564;
+  bottom: 0;
+  right: 6%;
+  border-radius: 10px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
 }
 .nom {
   text-transform: uppercase;
