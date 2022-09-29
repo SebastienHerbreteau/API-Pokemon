@@ -80,11 +80,36 @@ header {
   z-index: 3;
 }
 
+.generationPokemon{
+  left: 20%;
+}
 
+.typePokemon, .generationPokemon{
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  background-color: #ed5564;
+  bottom: -60%;
+  right: 20%;
+  border-radius: 10px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  font-family: "Denk One", sans-serif;
+  font-size: 24px;
+  padding: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
 
+.typePokemon:hover, .generationPokemon:hover{
+  transform: scale(1.02);
+}
 .pokeball{
   width: 6%;
-  z-index: 3;
+  z-index: 1;
   filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.5));
   display: flex;
   justify-content: center;
@@ -291,7 +316,7 @@ p {
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 25% 25% 25% 25%;
   grid-template-areas:
-    ". . typemodal . ."
+    ". generation typemodal id ."
     ". spec img resistances ."
     ". spec img resistances ."
     ". h2modal h2modal h2modal .";
@@ -314,6 +339,17 @@ p {
   margin-top: -100px;
 }
 
+.id{
+  grid-area: id;
+  display: flex;
+  justify-content: right;
+  align-items:flex-start;
+  margin-top: 100px;
+  
+}
+.id>p{
+  font-size: 42px;
+}
 .typeModal {
   grid-area: typemodal;
   display: flex;

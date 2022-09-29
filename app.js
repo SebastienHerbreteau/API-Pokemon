@@ -20,7 +20,7 @@ let typeCouleur = {
 };
 
 
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
+fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/8")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
@@ -119,6 +119,8 @@ function fetchPokemon(id){
               </div>
               <img class="imgPokeModal" id="ipm" src="assets/pokemons/${pokemon.id}.png">
               <h2 class="h2Modal">${pokemon.name}</h2>
+              <div class="id"><p>#${pokemon.id}</p></div>
+             
           </div>`
 }
         )}
