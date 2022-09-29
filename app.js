@@ -20,7 +20,7 @@ let typeCouleur = {
 };
 
 
-fetch("100.json")
+fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
@@ -234,3 +234,4 @@ input.addEventListener("mouseover",()=>{
 input.addEventListener("mouseout",()=>{
   go.classList.remove("animation")
 })
+
