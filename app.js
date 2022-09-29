@@ -20,7 +20,7 @@ let typeCouleur = {
 };
 
 
-fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/8")
+fetch("100.json")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
@@ -28,9 +28,10 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/8")
       
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
+            <h3>${pokemon.id}</h3>
             <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
             <h2 class="nom">${pokemon.name}</h2>
-            <h3>${pokemon.id}</h3>
+            
         </div>
         `;
     }
@@ -49,12 +50,36 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/8")
       }
     };
     
-    cards.forEach((card) => {
+      cards.forEach((card) => {
+
+      let thumbnailPetit = document.querySelector(".thumbnailPetit")
+      let thumbnailGrand = document.querySelector(".thumbnailGrand")
+      let percentGrand = 0;
+      let percentPetit = 0;
+      let percentCurrent = 10;
+      
+      thumbnailGrand.addEventListener("click", ()=>{
+    
+        let size = percentGrand + "%";
+        console.log(percentGrand)
+          card.style.width = size; 
+          percentGrand += 2;
+})
+
+
+      thumbnailPetit.addEventListener("click", ()=>{
+        
+        let size = percentPetit + "%";
+        console.log(percentPetit)
+          card.style.width = size; 
+          percentPetit -= 2;
+})
+
       card.addEventListener("click", () => {
         let importation = document.querySelector(".importation")
         importation.textContent = "";
         modal.classList.add("modalActive");
-        let id = card.lastElementChild.textContent; 
+        let id = card.firstElementChild.textContent; 
         fetchPokemon(id);
 
         right.addEventListener("click",()=>{
@@ -225,15 +250,5 @@ function tresVulnerable(pokemon) {
   return recup;
 }
 
-let input = document.querySelector(".input");
-let go = document.querySelector(".go")
 
-
-input.addEventListener("mouseover",()=>{
-  go.classList.add("animation")
-})
-
-input.addEventListener("mouseout",()=>{
-  go.classList.remove("animation")
-})
 

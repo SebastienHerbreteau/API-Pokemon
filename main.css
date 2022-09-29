@@ -10,62 +10,16 @@ body {
   justify-content: center;
   flex-direction: column;
   background-color: bisque;
-  overflow-x: hidden;
+  
 }
 
 main {
-  
   display: flex;
   justify-content: center;
+  flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 17%;
-  position: relative;
-}
-.card {
-  height: 370px;
-  width: 250px;
-  padding-top: 10px;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: 2px 4px 6px gray;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  border: 8px solid white;
-  overflow: hidden;
-  transition: 0.4s;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: scale(1.1);
-  box-shadow: 4px 8px 12px gray;
-}
-
-.card::after {
-  content: "";
-  transform: rotate(135deg);
-  position: absolute;
-  z-index: 0;
-  width: 80%;
-  height: 300%;
-  background: linear-gradient(
-    to left,
-    transparent,
-    rgba(255, 255, 255, 1) 80%,
-    transparent
-  );
-  left: -1700px;
-  top: 1500px;
-  animation: shine 10s ease infinite;
-}
-
-@keyframes shine {
-  to {
-    left: 1700px;
-    top: -1500px;
-  }
+  margin-top: 18%;
+  width: 100%;
 }
 
 header {
@@ -153,6 +107,7 @@ header {
   border: none;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
   color: #356abc;
+ 
 }
 
 .input:focus{
@@ -179,7 +134,7 @@ header {
   position: absolute;
   background-color: #ed5564;
   bottom: 0;
-  right: 6.1%;
+  right: 6.2%;
   border-radius: 10px;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
   display: flex;
@@ -219,26 +174,83 @@ header {
   cursor: pointer;
   transition: 0.4s;
 }
+
+.card {
+  width: 14%;
+  border-radius: 10px;
+  box-shadow: 2px 4px 6px gray;
+  display: flex;
+  aspect-ratio: 8/12;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  border-style: solid;
+  border-color: white;
+  border-width: thick;
+  overflow: hidden;
+  transition: 0.4s;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 10px;
+}
+
+
+.card:hover {
+  
+  transform: scale(1.05);
+  box-shadow: 4px 8px 12px gray;
+}
+
+/* .card::after {
+  content: "";
+  transform: rotate(135deg);
+  position: absolute;
+  z-index: 0;
+  width: 80%;
+  height: 300%;
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(255, 255, 255, 1) 80%,
+    transparent
+  );
+  left: -1700px;
+  top: 1500px;
+  animation: shine 10s ease infinite;
+}
+
+@keyframes shine {
+  to {
+    left: 1700px;
+    top: -1500px;
+  }
+} */
+
 .nom {
   text-transform: uppercase;
+  font-size: 1.7em;
+  width: 100%;
   text-align: center;
-  font-size: 24px;
   font-family: "Denk One", sans-serif;
   color: white;
-  margin-top: 50px;
   letter-spacing: 0.1em;
   text-shadow: 1px 2px 2px black;
 }
 
+.imgPoke {
+  width: 85%;
+  z-index: 1;
+  filter: drop-shadow(4px 6px 2px rgba(59, 59, 59, 0.655));
+}
+
 h3 {
   font-family: "Denk One", sans-serif;
-  text-align: center;
+  align-self: flex-end;
+  padding-right: 15px;
   font-size: 14px;
   font-weight: 100;
   color: white;
-  position: absolute;
-  top: 10px;
-  right: 10px;
   z-index: 1;
   text-shadow: 1px 2px 2px black;
 }
@@ -281,12 +293,7 @@ p {
   filter: drop-shadow(2px 3px 2px rgba(59, 59, 59, 0.655));
 }
 
-.imgPoke {
-  width: 80%;
-  z-index: 1;
-  margin-top: 30px;
-  filter: drop-shadow(4px 6px 2px rgba(59, 59, 59, 0.655));
-}
+
 
 .modal {
   width: 100vw;
