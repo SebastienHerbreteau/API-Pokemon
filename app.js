@@ -27,7 +27,7 @@ fetch("100.json")
       let main = document.querySelector("main");
       
       main.innerHTML += `
-        <div class="card" style="${bgType1(pokemon)}; width:14%">
+        <div class="card" style="${bgType1(pokemon)}">
             <h3>${pokemon.id}</h3>
             <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
             <h2 class="nom">${pokemon.name}</h2>
@@ -50,9 +50,23 @@ fetch("100.json")
       }
     };
     
-
+let thumbnailGrand = document.querySelector(".thumbnailGrand")
+let thumbnailPetit = document.querySelector(".thumbnailPetit")
 
       cards.forEach((card) => {
+
+          let size = 14;
+          card.style.width = size;
+
+        thumbnailGrand.addEventListener("click", ()=>{
+          size += 2;
+          card.style.width = size + "%";
+            })
+
+        thumbnailPetit.addEventListener("click", ()=>{
+          size -= 2;
+          card.style.width = size + "%";
+            })
 
       card.addEventListener("click", () => {
         let importation = document.querySelector(".importation")
@@ -231,3 +245,15 @@ function tresVulnerable(pokemon) {
 
 
 
+let lastScroll = 0;
+let header = document.querySelector("header")
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY < lastScroll) {
+    header.style.top = 0;
+  } else {
+    header.style.top = "-350px";
+  }
+
+  lastScroll = window.scrollY;
+});
