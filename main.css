@@ -195,6 +195,7 @@ header {
 
 .card {
   width: 14%;
+  
   border-radius: 10px;
   box-shadow: 2px 4px 6px gray;
   display: flex;
@@ -204,7 +205,7 @@ header {
   justify-content: space-around;
   border-style: solid;
   border-color: white;
-  border-width: thick;
+  border-width: 6px;
   overflow: hidden;
   transition: 0.4s;
   cursor: pointer;
@@ -247,7 +248,7 @@ header {
 
 .nom {
   text-transform: uppercase;
-  font-size: 1.7em;
+  font-size: 24px;
   width: 100%;
   text-align: center;
   font-family: "Denk One", sans-serif;
@@ -265,8 +266,8 @@ header {
 h3 {
   font-family: "Denk One", sans-serif;
   align-self: flex-end;
-  padding-right: 15px;
-  font-size: 14px;
+  padding-right: 5%;
+  font-size: 24px;
   font-weight: 100;
   color: white;
   z-index: 1;

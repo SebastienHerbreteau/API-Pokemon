@@ -20,7 +20,7 @@ let typeCouleur = {
 };
 
 
-fetch("100.json")
+fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/300")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
@@ -28,44 +28,87 @@ fetch("100.json")
       
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
-            <h3>${pokemon.id}</h3>
+            <h3 class="idpoke">${pokemon.id}</h3>
             <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
             <h2 class="nom">${pokemon.name}</h2>
             
         </div>
         `;
     }
-   
+
+    window.onclick = function (e) {
+      if (e.target == close || e.target.id == "ipm") {
+        modal.classList.remove("modalActive");
+      }
+    };
+
     let cards = document.querySelectorAll(".card");
     let modal = document.querySelector(".modal");
     let close = document.querySelector(".close");
     let right = document.querySelector(".right");
     let left = document.querySelector(".left");
+    let thumbnailGrand = document.querySelector(".thumbnailGrand");
+    let thumbnailPetit = document.querySelector(".thumbnailPetit");
+    let noms = document.querySelectorAll(".nom");
+    let ids = document.querySelectorAll(".idpoke");
     
+  
+      ids.forEach((id) => {
+      let size = 24;
+      id.style.fontSize = size;
 
-    window.onclick = function (e) {
-     
-      if (e.target == close || e.target.id == "ipm") {
-        modal.classList.remove("modalActive");
-      }
-    };
-    
-let thumbnailGrand = document.querySelector(".thumbnailGrand")
-let thumbnailPetit = document.querySelector(".thumbnailPetit")
+      thumbnailGrand.addEventListener("click", ()=>{
+        size += 3;
+        id.style.fontSize = size + "px";
+          })
 
-      cards.forEach((card) => {
+      thumbnailPetit.addEventListener("click", ()=>{
+        size -= 3;
+        id.style.fontSize = size + "px";
+    })
+    })
 
-          let size = 14;
-          card.style.width = size;
+      noms.forEach((nom) => {  
+        let size = 24;
+        nom.style.fontSize = size;
 
         thumbnailGrand.addEventListener("click", ()=>{
-          size += 2;
-          card.style.width = size + "%";
+          size += 3;
+          nom.style.fontSize = size + "px";
             })
 
         thumbnailPetit.addEventListener("click", ()=>{
-          size -= 2;
-          card.style.width = size + "%";
+          size -= 3;
+          nom.style.fontSize = size + "px";
+      })
+    })
+      
+
+      cards.forEach((card) => {
+          let sizeC = 14;
+          let sizeB = 6;
+          let sizeR = 10;
+          card.style.width = sizeC;
+          card.style.borderWidth = sizeB;
+          card.style.borderRadius = sizeR;
+
+
+        thumbnailGrand.addEventListener("click", ()=>{
+          sizeC += 2;
+          sizeB += 0.5;
+          sizeR += 0.5;
+          card.style.width = sizeC + "%";
+          card.style.borderWidth = sizeB + "px";
+          card.style.borderRadius = sizeR + "px";
+            })
+
+        thumbnailPetit.addEventListener("click", ()=>{
+          sizeC -= 2;
+          sizeB -= 0.5;
+          sizeR -= 0.5;
+          card.style.width = sizeC + "%";
+          card.style.borderWidth = sizeB + "px";
+          card.style.borderRadius = sizeR + "px";
             })
 
       card.addEventListener("click", () => {
@@ -99,14 +142,7 @@ let thumbnailPetit = document.querySelector(".thumbnailPetit")
           fetchPokemon(id)
           }
           })
-
-        
-
-        
-        
-    }); })
-
- 
+    }); }) 
   }); 
 
 
@@ -243,7 +279,9 @@ function tresVulnerable(pokemon) {
   return recup;
 }
 
-
+function size(){
+  
+}
 
 let lastScroll = 0;
 let header = document.querySelector("header")
