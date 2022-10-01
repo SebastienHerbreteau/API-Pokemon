@@ -1,3 +1,50 @@
+.h2Modal, .type1,
+.type2, .containerThumbnail, .thumbnailPetit, .thumbnailGrand, .pokeball, .typePokemon, .generationPokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typePokemon, .generationPokemon {
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  background-color: #ed5564;
+  bottom: 0;
+  border-radius: 10px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  font-family: "Denk One", sans-serif;
+  font-size: 24px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.thumbnailPetit, .thumbnailGrand {
+  position: absolute;
+  background-color: #ed5564;
+  border-radius: 10px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  cursor: pointer;
+  transition: 0.4s;
+  bottom: 0;
+}
+
+.gold, .silver {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Denk One", sans-serif;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
+  display: inline-block;
+  position: relative;
+  filter: contrast(1.8);
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 50%, rgba(0, 0, 0, 0.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shiny 1.8s linear infinite;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,10 +54,9 @@
 
 body {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   background-color: bisque;
-  
 }
 
 main {
@@ -18,77 +64,43 @@ main {
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 17%;
   width: 100%;
+  margin-top: 17%;
   transition: 0.4s;
 }
 
 header {
-  width: 100vw;
-  height: 34vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  width: 100vw;
+  height: 34vh;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
   transition: 0.6s;
+  z-index: 3;
 }
 
-.generationPokemon{
+.generationPokemon {
   left: 30%;
-  width: 200px;
-  height: 40px;
-  position: absolute;
-  background-color: #ed5564;
-  bottom: 0;
-  border-radius: 10px;
-  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-  font-family: "Denk One", sans-serif;
-  font-size: 24px;
-  padding: 5px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.4s;
 }
 
-.typePokemon{
+.typePokemon {
   right: 30%;
-  width: 200px;
-  height: 40px;
-  position: absolute;
-  background-color: #ed5564;
-  bottom: 0;
-  border-radius: 10px;
-  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-  font-family: "Denk One", sans-serif;
-  font-size: 24px;
-  padding: 5px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.4s;
 }
 
-.typePokemon:hover, .generationPokemon:hover, .thumbnailPetit:hover, .thumbnailGrand:hover{
+.typePokemon:hover, .generationPokemon:hover, .thumbnailPetit:hover, .thumbnailGrand:hover {
   transform: scale(1.05);
 }
-.pokeball{
+
+.pokeball {
   width: 6%;
   z-index: 1;
   filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.5));
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   left: 63%;
-  top:6%;
+  top: 6%;
 }
 
 .pokedeck {
@@ -105,16 +117,16 @@ header {
   filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.658));
 }
 
-.containerInput{
+.containerInput {
   position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 300px;
-  bottom: -0%;
+  bottom: 0%;
 }
 
-.input{
+.input {
   width: 100%;
   height: 100%;
   bottom: -50px;
@@ -125,20 +137,19 @@ header {
   border: none;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
   color: #356abc;
- 
 }
 
-.input:focus{
+.input:focus {
   outline: none;
 }
 
-.input::placeholder{
+.input::placeholder {
   font-family: "Denk One", sans-serif;
   color: #356abc;
   opacity: 0.6;
 }
 
-.go{
+.go {
   height: 100%;
   right: 0px;
   cursor: pointer;
@@ -146,38 +157,17 @@ header {
   padding: 5px;
 }
 
-.thumbnailGrand{
-  
+.thumbnailGrand {
   height: 12%;
-  position: absolute;
-  background-color: #ed5564;
-  bottom: 0;
   right: 6.2%;
-  border-radius: 10px;
-  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.4s;
 }
 
-.thumbnailPetit{
+.thumbnailPetit {
   height: 10%;
-  position: absolute;
-  background-color: #ed5564;
-  bottom: 0;
   right: 8.5%;
-  border-radius: 10px;
-  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.4s;
 }
 
-.containerThumbnail{
+.containerThumbnail {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -186,16 +176,12 @@ header {
   right: 6%;
   border-radius: 10px;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   transition: 0.4s;
 }
 
 .card {
   width: 14%;
-  
   border-radius: 10px;
   box-shadow: 2px 4px 6px gray;
   display: flex;
@@ -214,9 +200,7 @@ header {
   margin: 10px;
 }
 
-
 .card:hover {
-  
   transform: scale(1.05);
   box-shadow: 4px 8px 12px gray;
 }
@@ -245,7 +229,6 @@ header {
     top: -1500px;
   }
 } */
-
 .nom {
   text-transform: uppercase;
   font-size: 24px;
@@ -291,18 +274,7 @@ p {
   z-index: 1;
 }
 
-.type1,
-.type2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.type1 > p {
-  font-size: 35px;
-}
-
-.type2 > p {
+.type1 > p, .type2 > p {
   font-size: 35px;
 }
 
@@ -311,8 +283,6 @@ p {
   z-index: 1;
   filter: drop-shadow(2px 3px 2px rgba(59, 59, 59, 0.655));
 }
-
-
 
 .modal {
   width: 100vw;
@@ -333,7 +303,7 @@ p {
 
 .imgPokeModal {
   grid-area: img;
-  align-self: center; 
+  align-self: center;
   justify-self: center;
   transform: translateX(-50), translateY(-50);
   z-index: 10;
@@ -369,21 +339,15 @@ p {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 25% 25% 25% 25%;
-  grid-template-areas:
-    ". generation typemodal id ."
-    ". spec img resistances ."
-    ". spec img resistances ."
-    ". h2modal h2modal h2modal .";
+  grid-template-areas: ". generation typemodal id ." ". spec img resistances ." ". spec img resistances ." ". h2modal h2modal h2modal .";
   height: 100vh;
   width: 100vw;
 }
+
 .h2Modal {
   grid-area: h2modal;
-  display: flex;
   text-transform: uppercase;
-  justify-content: center;
   flex-direction: column;
-  align-items: center;
   font-size: 1200%;
   font-family: "Denk One", sans-serif;
   color: white;
@@ -393,17 +357,18 @@ p {
   margin-top: -100px;
 }
 
-.id{
+.id {
   grid-area: id;
   display: flex;
   justify-content: right;
-  align-items:flex-start;
+  align-items: flex-start;
   margin-top: 100px;
-  
 }
-.id>p{
+
+.id > p {
   font-size: 42px;
 }
+
 .typeModal {
   grid-area: typemodal;
   display: flex;
@@ -433,6 +398,7 @@ p {
   cursor: pointer;
   z-index: 10;
 }
+
 .left {
   position: absolute;
   left: 5%;
@@ -442,6 +408,7 @@ p {
   transform: rotate(180deg);
   z-index: 10;
 }
+
 .res {
   grid-area: resistances;
   height: 100%;
@@ -464,77 +431,31 @@ p {
   flex-direction: column;
   z-index: 2;
 }
+
 .ff > span {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
+
 .rouge {
   color: red;
-  text-transform: uppercase;
-  font-size: 22px;
-  font-family: "Denk One", sans-serif;
-  letter-spacing: 0.1em;
-  text-shadow: 1px 2px 2px black;
 }
 
 .orange {
   color: rgb(255, 139, 6);
-  text-transform: uppercase;
-  font-size: 22px;
-  font-family: "Denk One", sans-serif;
-  letter-spacing: 0.1em;
-  text-shadow: 1px 2px 2px black;
 }
 
 .vert {
   color: green;
-  text-transform: uppercase;
-  font-size: 22px;
-  font-family: "Denk One", sans-serif;
-  letter-spacing: 0.1em;
-  text-shadow: 1px 2px 2px black;
 }
 
 .silver {
   color: silver;
-  text-transform: uppercase;
-  font-size: 22px;
-  font-family: "Denk One", sans-serif;
-  letter-spacing: 0.1em;
-  text-shadow: 1px 2px 2px black;
-  display: inline-block;
-  position: relative;
-  filter: contrast(1.8);
-  -webkit-mask-image: linear-gradient(
-    -75deg,
-    rgba(0, 0, 0, 0.6) 30%,
-    #000 50%,
-    rgba(0, 0, 0, 0.6) 70%
-  );
-  -webkit-mask-size: 200%;
-  animation: shiny 2s linear infinite;
 }
 
 .gold {
   color: goldenrod;
-  text-transform: uppercase;
-  font-size: 22px;
-  font-family: "Denk One", sans-serif;
-  letter-spacing: 0.1em;
-  text-shadow: 1px 2px 2px black;
-  display: inline-block;
-  position: relative;
-  filter: contrast(1.8);
-
-  -webkit-mask-image: linear-gradient(
-    -75deg,
-    rgba(0, 0, 0, 0.6) 30%,
-    #000 50%,
-    rgba(0, 0, 0, 0.6) 70%
-  );
-  -webkit-mask-size: 200%;
-  animation: shiny 1.8s linear infinite;
 }
 
 @keyframes shiny {
@@ -546,21 +467,4 @@ p {
   }
 }
 
-@media screen and (max-device-width: 425px) {
-  .modalActive {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .imgPokeModal {
-    width: 80%;
-    z-index: 3;
-  }
-
-  .close {
-    width: 80px;
-    top: 60px;
-    position: absolute;
-    filter: invert(1);
-  }
-}
+/*# sourceMappingURL=main.css.map */
