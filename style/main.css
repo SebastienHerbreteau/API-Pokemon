@@ -1,5 +1,5 @@
 .h2Modal, .type1,
-.type2, .containerThumbnail, .thumbnailPetit, .thumbnailGrand, .pokeball, .typePokemon, .generationPokemon {
+.type2, .containerThumbnail, .thumbnailPetit, .thumbnailGrand, .pokeball, .typePokemon, .menu, .generationPokemon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,6 +45,14 @@
   animation: shiny 1.8s linear infinite;
 }
 
+.left, .right {
+  position: absolute;
+  filter: invert(1);
+  width: 5%;
+  cursor: pointer;
+  z-index: 10;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -84,13 +92,74 @@ header {
 
 .generationPokemon {
   left: 30%;
+  z-index: 2;
+}
+
+.menu {
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  background-color: #ed5564;
+  border-radius: 10px;
+  font-family: "Denk One", sans-serif;
+  font-size: 24px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+  left: 30%;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+}
+
+.generationPokemon1 {
+  bottom: -45px;
+  transition: 0.4s ease-in-out;
+}
+
+.generationPokemon2 {
+  bottom: -90px;
+  transition: 0.4s ease-in-out;
+}
+
+.generationPokemon3 {
+  bottom: -135px;
+  transition: 0.4s ease-in-out;
+}
+
+.generationPokemon4 {
+  bottom: -180px;
+  transition: 0.4s ease-in-out;
+}
+
+.generationPokemon5 {
+  bottom: -225px;
+  transition: 0.4s ease-in-out;
+}
+
+.generationPokemon6 {
+  bottom: -270px;
+  transition: 0.4s ease-in-out;
+}
+
+.generationPokemon7 {
+  bottom: -315px;
+  transition: 0.4s ease-in-out;
+}
+
+.generationPokemon8 {
+  bottom: -360px;
+  transition: 0.4s ease-in-out;
+}
+
+.mb {
+  bottom: 0;
 }
 
 .typePokemon {
   right: 30%;
 }
 
-.typePokemon:hover, .generationPokemon:hover, .thumbnailPetit:hover, .thumbnailGrand:hover {
+.typePokemon:hover, .generationPokemon:hover, .thumbnailPetit:hover, .thumbnailGrand:hover, .menu:hover {
   transform: scale(1.05);
 }
 
@@ -120,10 +189,9 @@ header {
 .containerInput {
   position: absolute;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   width: 300px;
-  bottom: 0%;
+  bottom: 0;
 }
 
 .input {
@@ -391,22 +459,12 @@ p {
 }
 
 .right {
-  position: absolute;
   right: 5%;
-  filter: invert(1);
-  width: 5%;
-  cursor: pointer;
-  z-index: 10;
 }
 
 .left {
-  position: absolute;
   left: 5%;
-  filter: invert(1);
-  width: 5%;
-  cursor: pointer;
   transform: rotate(180deg);
-  z-index: 10;
 }
 
 .res {

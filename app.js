@@ -20,7 +20,7 @@ let typeCouleur = {
 };
 
 
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/300")
+fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
@@ -295,3 +295,11 @@ window.addEventListener("scroll", () => {
 
   lastScroll = window.scrollY;
 });
+
+let menus = document.querySelectorAll(".menu");
+let genPoke = document.querySelector(".generationPokemon");
+
+menus.forEach((menu) =>{
+  genPoke.addEventListener("click", ()=>{
+   menu.classList.toggle("mb")
+  })})
