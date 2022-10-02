@@ -1,34 +1,8 @@
 .h2Modal, .type1,
-.type2, .containerThumbnail, .thumbnailPetit, .thumbnailGrand, .pokeball, .typePokemon, .menu, .generationPokemon {
+.type2 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.typePokemon, .generationPokemon {
-  width: 200px;
-  height: 40px;
-  position: absolute;
-  background-color: #ed5564;
-  bottom: 0;
-  border-radius: 10px;
-  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-  font-family: "Denk One", sans-serif;
-  font-size: 24px;
-  padding: 5px;
-  color: white;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.thumbnailPetit, .thumbnailGrand {
-  position: absolute;
-  background-color: #ed5564;
-  border-radius: 10px;
-  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-  cursor: pointer;
-  transition: 0.4s;
-  bottom: 0;
 }
 
 .gold, .silver {
@@ -65,6 +39,7 @@ body {
   flex-direction: column;
   justify-content: center;
   background-color: bisque;
+  overflow-x: hidden;
 }
 
 main {
@@ -72,184 +47,127 @@ main {
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
-  margin-top: 17%;
+  width: 100vw;
+  margin-top: 37vh;
   transition: 0.4s;
 }
 
 header {
+  height: 35vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0%;
+  z-index: 2;
+  transition: 0.4s;
+}
+
+.containerBottomHeader {
+  height: 12%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-content: center;
+  gap: 120px;
+}
+
+.containerTitle {
   width: 100vw;
-  height: 34vh;
-  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin-top: 50px;
+}
+
+.pokeball {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  position: absolute;
+  right: 37%;
   top: 0;
-  left: 0;
-  transition: 0.6s;
-  z-index: 3;
+  transform: translate(50%, 50%);
+  z-index: 0;
 }
 
-.generationPokemon {
-  left: 30%;
-  z-index: 2;
+.pokedeck {
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  z-index: 1;
 }
 
-.menu {
+.containerBoutonDroit {
   width: 200px;
-  height: 40px;
+}
+
+.typePokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 35px;
   position: absolute;
   background-color: #ed5564;
   border-radius: 10px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
   font-family: "Denk One", sans-serif;
   font-size: 24px;
   padding: 5px;
   color: white;
   cursor: pointer;
   transition: 0.4s;
-  left: 30%;
-  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
 }
 
-.generationPokemon1 {
-  bottom: -45px;
-  transition: 0.4s ease-in-out;
-}
-
-.generationPokemon2 {
-  bottom: -90px;
-  transition: 0.4s ease-in-out;
-}
-
-.generationPokemon3 {
-  bottom: -135px;
-  transition: 0.4s ease-in-out;
-}
-
-.generationPokemon4 {
-  bottom: -180px;
-  transition: 0.4s ease-in-out;
-}
-
-.generationPokemon5 {
-  bottom: -225px;
-  transition: 0.4s ease-in-out;
-}
-
-.generationPokemon6 {
-  bottom: -270px;
-  transition: 0.4s ease-in-out;
-}
-
-.generationPokemon7 {
-  bottom: -315px;
-  transition: 0.4s ease-in-out;
-}
-
-.generationPokemon8 {
-  bottom: -360px;
-  transition: 0.4s ease-in-out;
-}
-
-.mb {
-  bottom: 0;
-}
-
-.typePokemon {
-  right: 30%;
-}
-
-.typePokemon:hover, .generationPokemon:hover, .thumbnailPetit:hover, .thumbnailGrand:hover, .menu:hover {
-  transform: scale(1.05);
-}
-
-.pokeball {
-  width: 6%;
-  z-index: 1;
-  filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.5));
-  position: absolute;
-  left: 63%;
-  top: 6%;
-}
-
-.pokedeck {
-  width: 35%;
+.generationPokemon {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-}
-
-.pokedeck > img {
-  height: 100%;
-  width: 100%;
-  z-index: 2;
-  filter: drop-shadow(6px 10px 2px rgba(41, 41, 41, 0.658));
-}
-
-.containerInput {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 300px;
-  bottom: 0;
-}
-
-.input {
-  width: 100%;
-  height: 100%;
-  bottom: -50px;
-  border-radius: 10px;
-  font-size: 24px;
-  padding: 5px;
-  padding-left: 10px;
-  border: none;
-  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-  color: #356abc;
-}
-
-.input:focus {
-  outline: none;
-}
-
-.input::placeholder {
-  font-family: "Denk One", sans-serif;
-  color: #356abc;
-  opacity: 0.6;
-}
-
-.go {
-  height: 100%;
-  right: 0px;
-  cursor: pointer;
-  position: absolute;
-  padding: 5px;
-}
-
-.thumbnailGrand {
-  height: 12%;
-  right: 6.2%;
-}
-
-.thumbnailPetit {
-  height: 10%;
-  right: 8.5%;
-}
-
-.containerThumbnail {
-  width: 40px;
-  height: 40px;
+  align-items: center;
+  width: 200px;
+  width: 200px;
+  height: 35px;
   position: absolute;
   background-color: #ed5564;
-  bottom: 0;
-  right: 6%;
   border-radius: 10px;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  font-family: "Denk One", sans-serif;
+  font-size: 24px;
+  padding: 5px;
+  color: white;
   cursor: pointer;
   transition: 0.4s;
 }
 
+.containerBoutonGauche {
+  width: 200px;
+}
+
+.containerInput {
+  width: 300px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.go {
+  height: 100%;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+}
+
+.input {
+  height: 100%;
+  width: 80%;
+  border-radius: 10px;
+  border: none;
+  font-size: 24px;
+  padding: 5px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  outline: none;
+}
+
 .card {
-  width: 14%;
+  width: 200px;
   border-radius: 10px;
   box-shadow: 2px 4px 6px gray;
   display: flex;

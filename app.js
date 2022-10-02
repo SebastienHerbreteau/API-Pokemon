@@ -20,7 +20,7 @@ let typeCouleur = {
 };
 
 
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
+fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
@@ -53,63 +53,63 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
     let ids = document.querySelectorAll(".idpoke");
     
   
-      ids.forEach((id) => {
-      let size = 24;
-      id.style.fontSize = size;
+    //   ids.forEach((id) => {
+    //   let size = 24;
+    //   id.style.fontSize = size;
 
-      thumbnailGrand.addEventListener("click", ()=>{
-        size += 3;
-        id.style.fontSize = size + "px";
-          })
+    //   thumbnailGrand.addEventListener("click", ()=>{
+    //     size += 3;
+    //     id.style.fontSize = size + "px";
+    //       })
 
-      thumbnailPetit.addEventListener("click", ()=>{
-        size -= 3;
-        id.style.fontSize = size + "px";
-    })
-    })
+    //   thumbnailPetit.addEventListener("click", ()=>{
+    //     size -= 3;
+    //     id.style.fontSize = size + "px";
+    // })
+    // })
 
-      noms.forEach((nom) => {  
-        let size = 24;
-        nom.style.fontSize = size;
+    //   noms.forEach((nom) => {  
+    //     let size = 24;
+    //     nom.style.fontSize = size;
 
-        thumbnailGrand.addEventListener("click", ()=>{
-          size += 3;
-          nom.style.fontSize = size + "px";
-            })
+    //     thumbnailGrand.addEventListener("click", ()=>{
+    //       size += 3;
+    //       nom.style.fontSize = size + "px";
+    //         })
 
-        thumbnailPetit.addEventListener("click", ()=>{
-          size -= 3;
-          nom.style.fontSize = size + "px";
-      })
-    })
+    //     thumbnailPetit.addEventListener("click", ()=>{
+    //       size -= 3;
+    //       nom.style.fontSize = size + "px";
+    //   })
+    // })
       
 
       cards.forEach((card) => {
-          let sizeC = 14;
-          let sizeB = 6;
-          let sizeR = 10;
-          card.style.width = sizeC;
-          card.style.borderWidth = sizeB;
-          card.style.borderRadius = sizeR;
+        //   let sizeC = 14;
+        //   let sizeB = 6;
+        //   let sizeR = 10;
+        //   card.style.width = sizeC;
+        //   card.style.borderWidth = sizeB;
+        //   card.style.borderRadius = sizeR;
 
 
-        thumbnailGrand.addEventListener("click", ()=>{
-          sizeC += 2;
-          sizeB += 0.5;
-          sizeR += 0.5;
-          card.style.width = sizeC + "%";
-          card.style.borderWidth = sizeB + "px";
-          card.style.borderRadius = sizeR + "px";
-            })
+        // thumbnailGrand.addEventListener("click", ()=>{
+        //   sizeC += 2;
+        //   sizeB += 0.5;
+        //   sizeR += 0.5;
+        //   card.style.width = sizeC + "%";
+        //   card.style.borderWidth = sizeB + "px";
+        //   card.style.borderRadius = sizeR + "px";
+        //     })
 
-        thumbnailPetit.addEventListener("click", ()=>{
-          sizeC -= 2;
-          sizeB -= 0.5;
-          sizeR -= 0.5;
-          card.style.width = sizeC + "%";
-          card.style.borderWidth = sizeB + "px";
-          card.style.borderRadius = sizeR + "px";
-            })
+        // thumbnailPetit.addEventListener("click", ()=>{
+        //   sizeC -= 2;
+        //   sizeB -= 0.5;
+        //   sizeR -= 0.5;
+        //   card.style.width = sizeC + "%";
+        //   card.style.borderWidth = sizeB + "px";
+        //   card.style.borderRadius = sizeR + "px";
+        //     })
 
       card.addEventListener("click", () => {
         let importation = document.querySelector(".importation")
