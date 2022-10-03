@@ -52,65 +52,8 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
     let noms = document.querySelectorAll(".nom");
     let ids = document.querySelectorAll(".idpoke");
     
-  
-    //   ids.forEach((id) => {
-    //   let size = 24;
-    //   id.style.fontSize = size;
-
-    //   thumbnailGrand.addEventListener("click", ()=>{
-    //     size += 3;
-    //     id.style.fontSize = size + "px";
-    //       })
-
-    //   thumbnailPetit.addEventListener("click", ()=>{
-    //     size -= 3;
-    //     id.style.fontSize = size + "px";
-    // })
-    // })
-
-    //   noms.forEach((nom) => {  
-    //     let size = 24;
-    //     nom.style.fontSize = size;
-
-    //     thumbnailGrand.addEventListener("click", ()=>{
-    //       size += 3;
-    //       nom.style.fontSize = size + "px";
-    //         })
-
-    //     thumbnailPetit.addEventListener("click", ()=>{
-    //       size -= 3;
-    //       nom.style.fontSize = size + "px";
-    //   })
-    // })
-      
 
       cards.forEach((card) => {
-        //   let sizeC = 14;
-        //   let sizeB = 6;
-        //   let sizeR = 10;
-        //   card.style.width = sizeC;
-        //   card.style.borderWidth = sizeB;
-        //   card.style.borderRadius = sizeR;
-
-
-        // thumbnailGrand.addEventListener("click", ()=>{
-        //   sizeC += 2;
-        //   sizeB += 0.5;
-        //   sizeR += 0.5;
-        //   card.style.width = sizeC + "%";
-        //   card.style.borderWidth = sizeB + "px";
-        //   card.style.borderRadius = sizeR + "px";
-        //     })
-
-        // thumbnailPetit.addEventListener("click", ()=>{
-        //   sizeC -= 2;
-        //   sizeB -= 0.5;
-        //   sizeR -= 0.5;
-        //   card.style.width = sizeC + "%";
-        //   card.style.borderWidth = sizeB + "px";
-        //   card.style.borderRadius = sizeR + "px";
-        //     })
-
       card.addEventListener("click", () => {
         let importation = document.querySelector(".importation")
         importation.textContent = "";
@@ -279,9 +222,6 @@ function tresVulnerable(pokemon) {
   return recup;
 }
 
-function size(){
-  
-}
 
 let lastScroll = 0;
 let header = document.querySelector("header")
@@ -296,10 +236,11 @@ window.addEventListener("scroll", () => {
   lastScroll = window.scrollY;
 });
 
-let menus = document.querySelectorAll(".menu");
-let genPoke = document.querySelector(".generationPokemon");
+let menu = document.querySelector(".menu");
+let genPokes = document.querySelectorAll(".generationPokemon");
 
-menus.forEach((menu) =>{
-  genPoke.addEventListener("click", ()=>{
-   menu.classList.toggle("mb")
-  })})
+genPokes.forEach((genPoke) =>{
+  menu.addEventListener("click", ()=>{
+    genPoke.style.position = "initial";
+  })
+})

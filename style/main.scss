@@ -1,233 +1,235 @@
 %flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 %redButton {
-    width: 200px;
-    height: 40px;
-    position: absolute;
-    background-color: #ed5564;
-    border-radius: 10px;
-    filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-    font-family: "Denk One", sans-serif;
-    font-size: 24px;
-    padding: 5px;
-    color: white;
-    cursor: pointer;
-    transition: 0.4s;
-    
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  background-color: #ed5564;
+  border-radius: 10px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  font-family: "Denk One", sans-serif;
+  font-size: 24px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+
 }
-%thumbNails {
-    position: absolute;
-    background-color: #ed5564;
-    border-radius: 10px;
-    filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-    cursor: pointer;
-    transition: 0.4s;
-    bottom: 0;
-}
-%shiny{
-    text-transform: uppercase;
-    font-size: 22px;
-    font-family: "Denk One", sans-serif;
-    letter-spacing: 0.1em;
-    text-shadow: 1px 2px 2px black;
-    display: inline-block;
-    position: relative;
-    filter: contrast(1.8);
-  
-    -webkit-mask-image: linear-gradient(
-      -75deg,
+
+%shiny {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Denk One", sans-serif;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
+  display: inline-block;
+  position: relative;
+  filter: contrast(1.8);
+
+  -webkit-mask-image: linear-gradient(-75deg,
       rgba(0, 0, 0, 0.6) 30%,
       #000 50%,
-      rgba(0, 0, 0, 0.6) 70%
-    );
-    -webkit-mask-size: 200%;
-    animation: shiny 1.8s linear infinite;
-  }
-%resColor{
-    text-transform: uppercase;
-    font-size: 22px;
-    font-family: "Denk One", sans-serif;
-    letter-spacing: 0.1em;
-    text-shadow: 1px 2px 2px black;
+      rgba(0, 0, 0, 0.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shiny 1.8s linear infinite;
 }
+
+%resColor {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Denk One", sans-serif;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
+}
+
 %arrow {
-    position: absolute;
-    filter: invert(1);
-    width: 5%;
-    cursor: pointer;
-    z-index: 10;
+  position: absolute;
+  filter: invert(1);
+  width: 5%;
+  cursor: pointer;
+  z-index: 10;
 }
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Denk One", sans-serif;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: bisque;
-    overflow-x: hidden;
-    
-  }
-  
-  main {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100vw;
-    margin-top: 37vh;
-    transition: 0.4s;
-    
-  }
-  header{
-    height: 35vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position:fixed;
-    top: 0%;
-    z-index: 2;
-    transition: 0.4s;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Denk One", sans-serif;
+}
 
-  .containerBottomHeader{
-    height: 12%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    gap: 120px;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: bisque;
+  overflow-x: hidden;
 
-  .containerTitle{
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    margin-top: 50px;
-  }
+}
 
-  .pokeball{
-    width: 100px;
-    height: 100px;
-    filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-    position: absolute;
-    right: 37%;
-    top: 0;
-    transform: translate(50%, 50%);
-    z-index: 0;
-  }
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  margin-top: 37vh;
+  transition: 0.4s;
 
-  .pokedeck{
-    filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-    z-index: 1;
-  }
+}
 
-  .containerBoutonDroit{
-    width: 200px;
-  }
+header {
+  height: 35vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0%;
+  z-index: 2;
+  transition: 0.4s;
+}
 
-  .typePokemon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 35px;
-    position: absolute;
-    background-color: #ed5564;
-    border-radius: 10px;
-    filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-    font-family: "Denk One", sans-serif;
-    font-size: 24px;
-    padding: 5px;
-    color: white;
-    cursor: pointer;
-    transition: 0.4s;
-  }
-  
-  .generationPokemon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    width: 200px;
-    height: 35px;
-    position: absolute;
-    background-color: #ed5564;
-    border-radius: 10px;
-    filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-    font-family: "Denk One", sans-serif;
-    font-size: 24px;
-    padding: 5px;
-    color: white;
-    cursor: pointer;
-    transition: 0.4s;
-  }
-  .containerBoutonGauche{
-    width: 200px;
-  }
+.containerBottomHeader {
+  height: 12%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 120px;
+}
 
-  .containerInput{
-    width: 300px;
-    position: relative;
-    display: flex;
-    justify-content:space-between;
-    gap:5px;
-  }
+.containerTitle {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin-top: 50px;
+}
 
-  .go{
-    height: 100%;
-    filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-    
-  }
+.pokeball {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  position: absolute;
+  right: 37%;
+  top: 0;
+  transform: translate(50%, 50%);
+  z-index: 0;
+}
 
-  .input{
-    height: 100%;
-    width: 80%;
-    border-radius: 10px;
-    border: none;
-    font-size: 24px;
-    padding: 5px;
-    filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-    outline: none;
-  }
+.pokedeck {
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  z-index: 1;
+}
 
-  .card {
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 2px 4px 6px gray;
-    display: flex;
-    aspect-ratio: 8/12;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    border-style: solid;
-    border-color: white;
-    border-width: 6px;
-    overflow: hidden;
-    transition: 0.4s;
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 10px;
-  }
-  
-  
-  .card:hover {
-    
-    transform: scale(1.05);
-    box-shadow: 4px 8px 12px gray;
-  }
-  
-  /* .card::after {
+.containerBoutonDroit {
+  width: 200px;
+}
+
+.typePokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 35px;
+  position: absolute;
+  background-color: #ed5564;
+  border-radius: 10px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  font-family: "Denk One", sans-serif;
+  font-size: 24px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.generationPokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  width: 200px;
+  height: 35px;
+  margin-top: 5px;
+  position: absolute;
+  background-color: #ed5564;
+  border-radius: 10px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  font-family: "Denk One", sans-serif;
+  font-size: 24px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.menu {
+  z-index: 1;
+}
+
+.containerBoutonGauche {
+  width: 200px;
+  height: fit-content;
+}
+
+.containerInput {
+  width: fit-content;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.go {
+  height: 100%;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+
+}
+
+.input {
+  height: 100%;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+  font-size: 24px;
+  padding: 5px;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  outline: none;
+}
+
+.card {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 6px gray;
+  display: flex;
+  aspect-ratio: 8/12;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  border-style: solid;
+  border-color: white;
+  border-width: 6px;
+  overflow: hidden;
+  transition: 0.4s;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 10px;
+}
+
+
+.card:hover {
+
+  transform: scale(1.05);
+  box-shadow: 4px 8px 12px gray;
+}
+
+/* .card::after {
     content: "";
     transform: rotate(135deg);
     position: absolute;
@@ -251,244 +253,253 @@
       top: -1500px;
     }
   } */
-  
-  .nom {
-    text-transform: uppercase;
-    font-size: 24px;
-    width: 100%;
-    text-align: center;
-    font-family: "Denk One", sans-serif;
-    color: white;
-    letter-spacing: 0.1em;
-    text-shadow: 1px 2px 2px black;
-  }
-  
-  .imgPoke {
-    width: 85%;
-    z-index: 1;
-    filter: drop-shadow(4px 6px 2px rgba(59, 59, 59, 0.655));
-  }
-  
-  h3 {
-    font-family: "Denk One", sans-serif;
-    align-self: flex-end;
-    padding-right: 5%;
-    font-size: 24px;
-    font-weight: 100;
-    color: white;
-    z-index: 1;
-    text-shadow: 1px 2px 2px black;
-  }
-  
-  p {
-    font-family: "Denk One", sans-serif;
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    z-index: 1;
-    text-shadow: 1px 1px 2px black;
-  }
-  
-  .type {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: fit-content;
-    z-index: 1;
-  }
-  
-  .type1,
-  .type2 {
-    @extend %flexCenter;
-  }
-  
-  .type1 > p, .type2 > p {
-    font-size: 35px;
+
+.nom {
+  text-transform: uppercase;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+  font-family: "Denk One", sans-serif;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
+}
+
+.imgPoke {
+  width: 85%;
+  z-index: 1;
+  filter: drop-shadow(4px 6px 2px rgba(59, 59, 59, 0.655));
+}
+
+h3 {
+  font-family: "Denk One", sans-serif;
+  align-self: flex-end;
+  padding-right: 5%;
+  font-size: 24px;
+  font-weight: 100;
+  color: white;
+  z-index: 1;
+  text-shadow: 1px 2px 2px black;
+}
+
+p {
+  font-family: "Denk One", sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  z-index: 1;
+  text-shadow: 1px 1px 2px black;
+}
+
+.type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+  z-index: 1;
+}
+
+.type1,
+.type2 {
+  @extend %flexCenter;
+}
+
+.type1>p,
+.type2>p {
+  font-size: 35px;
+}
+
+.typeImage {
+  width: 50px;
+  z-index: 1;
+  filter: drop-shadow(2px 3px 2px rgba(59, 59, 59, 0.655));
+}
+
+
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.856);
+  z-index: 3;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalActive {
+  display: flex;
+}
+
+.imgPokeModal {
+  grid-area: img;
+  align-self: center;
+  justify-self: center;
+  transform: translateX(-50), translateY(-50);
+  z-index: 10;
+  filter: drop-shadow(4px 6px 2px rgba(0, 0, 0, 0.655));
+  cursor: pointer;
+}
+
+.HP,
+.attaque,
+.defense,
+.specialAttaque,
+.specialDefense,
+.vitesse {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Denk One", sans-serif;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
+}
+
+.spec {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  grid-area: spec;
+}
+
+.specModal {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-areas:
+    ". generation typemodal id ."
+    ". spec img resistances ."
+    ". spec img resistances ."
+    ". h2modal h2modal h2modal .";
+  height: 100vh;
+  width: 100vw;
+}
+
+.h2Modal {
+  @extend %flexCenter;
+  grid-area: h2modal;
+  text-transform: uppercase;
+  flex-direction: column;
+  font-size: 1200%;
+  font-family: "Denk One", sans-serif;
+  color: white;
+  text-shadow: 8px 8px 8px black;
+  width: 100%;
+  height: 100%;
+  margin-top: -100px;
+}
+
+.id {
+  grid-area: id;
+  display: flex;
+  justify-content: right;
+  align-items: flex-start;
+  margin-top: 100px;
+
+}
+
+.id>p {
+  font-size: 42px;
+}
+
+.typeModal {
+  grid-area: typemodal;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: end;
+  text-shadow: 8px 8px 8px black;
+  gap: 30px;
+  position: absolute;
+  bottom: 7%;
+}
+
+.close {
+  width: 50px;
+  top: 40px;
+  position: absolute;
+  filter: invert(1);
+  z-index: 4;
+  cursor: pointer;
+}
+
+.right {
+  @extend %arrow;
+  right: 5%;
+
+}
+
+.left {
+  @extend %arrow;
+  left: 5%;
+  ;
+  transform: rotate(180deg);
+
+}
+
+.res {
+  grid-area: resistances;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  text-align: right;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Denk One", sans-serif;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 2px 2px black;
+}
+
+.ff {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.ff>span {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.rouge {
+  color: red;
+}
+
+.orange {
+  color: rgb(255, 139, 6);
+}
+
+.vert {
+  color: green;
+}
+
+.silver {
+  @extend %shiny;
+  color: silver;
+}
+
+.gold {
+  @extend %shiny;
+  color: goldenrod;
+}
+
+@keyframes shiny {
+  from {
+    -webkit-mask-position: 150%;
   }
 
-  .typeImage {
-    width: 50px;
-    z-index: 1;
-    filter: drop-shadow(2px 3px 2px rgba(59, 59, 59, 0.655));
+  to {
+    -webkit-mask-position: -50%;
   }
-  
-  
-  
-  .modal {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.856);
-    z-index: 3;
-    display: none;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modalActive {
-    display: flex;
-  }
-  
-  .imgPokeModal {
-    grid-area: img;
-    align-self: center; 
-    justify-self: center;
-    transform: translateX(-50), translateY(-50);
-    z-index: 10;
-    filter: drop-shadow(4px 6px 2px rgba(0, 0, 0, 0.655));
-    cursor: pointer;
-  }
-  
-  .HP,
-  .attaque,
-  .defense,
-  .specialAttaque,
-  .specialDefense,
-  .vitesse {
-    text-transform: uppercase;
-    font-size: 22px;
-    font-family: "Denk One", sans-serif;
-    color: white;
-    letter-spacing: 0.1em;
-    text-shadow: 1px 2px 2px black;
-  }
-  
-  .spec {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    grid-area: spec;
-  }
-  
-  .specModal {
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 25% 25% 25% 25%;
-    grid-template-areas:
-      ". generation typemodal id ."
-      ". spec img resistances ."
-      ". spec img resistances ."
-      ". h2modal h2modal h2modal .";
-    height: 100vh;
-    width: 100vw;
-  }
-  .h2Modal {
-    @extend %flexCenter;
-    grid-area: h2modal;
-    text-transform: uppercase;
-    flex-direction: column;
-    font-size: 1200%;
-    font-family: "Denk One", sans-serif;
-    color: white;
-    text-shadow: 8px 8px 8px black;
-    width: 100%;
-    height: 100%;
-    margin-top: -100px;
-  }
-  
-  .id{
-    grid-area: id;
-    display: flex;
-    justify-content: right;
-    align-items:flex-start;
-    margin-top: 100px;
-    
-  }
-  .id>p{
-    font-size: 42px;
-  }
-  .typeModal {
-    grid-area: typemodal;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    align-items: end;
-    text-shadow: 8px 8px 8px black;
-    gap: 30px;
-    position: absolute;
-    bottom: 7%;
-  }
-  
-  .close {
-    width: 50px;
-    top: 40px;
-    position: absolute;
-    filter: invert(1);
-    z-index: 4;
-    cursor: pointer;
-  }
-  
-  .right {
-    @extend %arrow;
-    right: 5%;
-    
-  }
-  .left {
-    @extend %arrow;
-    left: 5%;;
-    transform: rotate(180deg);
-    
-  }
-  .res {
-    grid-area: resistances;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    text-align: right;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
-    text-transform: uppercase;
-    font-size: 22px;
-    font-family: "Denk One", sans-serif;
-    color: white;
-    letter-spacing: 0.1em;
-    text-shadow: 1px 2px 2px black;
-  }
-  
-  .ff {
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-  }
-  .ff > span {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  
-  .rouge {
-    color: red;
-  }
-  
-  .orange {
-    color: rgb(255, 139, 6);
-  }
-  
-  .vert {
-    color: green;
-  }
-  
-  .silver {
-    @extend %shiny;
-    color: silver;
-  }
-  
-  .gold {
-    @extend %shiny;
-    color: goldenrod;
-  }
-  
-  @keyframes shiny {
-    from {
-      -webkit-mask-position: 150%;
-    }
-    to {
-      -webkit-mask-position: -50%;
-    }
 }

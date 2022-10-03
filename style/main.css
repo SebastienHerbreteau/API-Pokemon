@@ -126,6 +126,7 @@ header {
   width: 200px;
   width: 200px;
   height: 35px;
+  margin-top: 5px;
   position: absolute;
   background-color: #ed5564;
   border-radius: 10px;
@@ -138,12 +139,17 @@ header {
   transition: 0.4s;
 }
 
+.menu {
+  z-index: 1;
+}
+
 .containerBoutonGauche {
   width: 200px;
+  height: fit-content;
 }
 
 .containerInput {
-  width: 300px;
+  width: fit-content;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -157,7 +163,7 @@ header {
 
 .input {
   height: 100%;
-  width: 80%;
+  width: 250px;
   border-radius: 10px;
   border: none;
   font-size: 24px;
@@ -192,29 +198,29 @@ header {
 }
 
 /* .card::after {
-  content: "";
-  transform: rotate(135deg);
-  position: absolute;
-  z-index: 0;
-  width: 80%;
-  height: 300%;
-  background: linear-gradient(
-    to left,
-    transparent,
-    rgba(255, 255, 255, 1) 80%,
-    transparent
-  );
-  left: -1700px;
-  top: 1500px;
-  animation: shine 10s ease infinite;
-}
-
-@keyframes shine {
-  to {
-    left: 1700px;
-    top: -1500px;
+    content: "";
+    transform: rotate(135deg);
+    position: absolute;
+    z-index: 0;
+    width: 80%;
+    height: 300%;
+    background: linear-gradient(
+      to left,
+      transparent,
+      rgba(255, 255, 255, 1) 80%,
+      transparent
+    );
+    left: -1700px;
+    top: 1500px;
+    animation: shine 10s ease infinite;
   }
-} */
+
+  @keyframes shine {
+    to {
+      left: 1700px;
+      top: -1500px;
+    }
+  } */
 .nom {
   text-transform: uppercase;
   font-size: 24px;
@@ -260,7 +266,8 @@ p {
   z-index: 1;
 }
 
-.type1 > p, .type2 > p {
+.type1 > p,
+.type2 > p {
   font-size: 35px;
 }
 
