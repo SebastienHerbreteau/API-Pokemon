@@ -19,8 +19,8 @@ let typeCouleur = {
   Fée: "background-image: url('assets/fee.png')",
 };
 
-
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
+function random(){
+fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/1")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
@@ -47,12 +47,7 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
     let close = document.querySelector(".close");
     let right = document.querySelector(".right");
     let left = document.querySelector(".left");
-    let thumbnailGrand = document.querySelector(".thumbnailGrand");
-    let thumbnailPetit = document.querySelector(".thumbnailPetit");
-    let noms = document.querySelectorAll(".nom");
-    let ids = document.querySelectorAll(".idpoke");
-    
-
+ 
       cards.forEach((card) => {
       card.addEventListener("click", () => {
         let importation = document.querySelector(".importation")
@@ -87,6 +82,8 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
           })
     }); }) 
   }); 
+}
+random()
 
 
 function fetchPokemon(id){
@@ -121,7 +118,6 @@ function fetchPokemon(id){
           </div>`
 }
         )}
-
 
 function type(pokemon) {
   if (pokemon.apiTypes[1] == undefined) {
@@ -223,6 +219,571 @@ function tresVulnerable(pokemon) {
 }
 
 
+let gen1 = document.querySelector(".gen1");
+let gen2 = document.querySelector(".gen2");
+let gen3 = document.querySelector(".gen3");
+let gen4 = document.querySelector(".gen4");
+let gen5 = document.querySelector(".gen5");
+let gen6 = document.querySelector(".gen6");
+let gen7 = document.querySelector(".gen7");
+let gen8 = document.querySelector(".gen8");
+let main = document.querySelector("main");
+
+gen1.addEventListener("click",()=>{
+  main.innerHTML = "";
+  generation1()
+})
+gen2.addEventListener("click",()=>{
+  main.innerHTML = "";
+  generation2()
+})
+gen3.addEventListener("click",()=>{
+  main.innerHTML = "";
+  generation3()
+})
+gen4.addEventListener("click",()=>{
+  main.innerHTML = "";
+  generation4()
+})
+gen5.addEventListener("click",()=>{
+  main.innerHTML = "";
+  generation5()
+})
+gen6.addEventListener("click",()=>{
+  main.innerHTML = "";
+  generation6()
+})
+gen7.addEventListener("click",()=>{
+  main.innerHTML = "";
+  generation7()
+})
+gen8.addEventListener("click",()=>{
+  main.innerHTML = "";
+  generation8()
+})
+
+function generation1(){
+  fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/1")
+
+  .then((response) => response.json())
+  .then((pokebase) => {
+    for (pokemon of pokebase) {
+      let main = document.querySelector("main");
+      
+      main.innerHTML += `
+        <div class="card" style="${bgType1(pokemon)}">
+            <h3 class="idpoke">${pokemon.id}</h3>
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <h2 class="nom">${pokemon.name}</h2>
+            
+        </div>
+        `;
+    }
+
+    window.onclick = function (e) {
+      if (e.target == close || e.target.id == "ipm") {
+        modal.classList.remove("modalActive");
+      }
+    };
+
+    let cards = document.querySelectorAll(".card");
+    let modal = document.querySelector(".modal");
+    let close = document.querySelector(".close");
+    let right = document.querySelector(".right");
+    let left = document.querySelector(".left");
+ 
+      cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        let importation = document.querySelector(".importation")
+        importation.textContent = "";
+        modal.classList.add("modalActive");
+        let id = card.firstElementChild.textContent; 
+        fetchPokemon(id);
+
+        right.addEventListener("click",()=>{
+          id++; 
+          fetchPokemon(id)
+          })
+
+        left.addEventListener("click",()=>{
+          id--;
+          fetchPokemon(id)
+          })
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowRight"){
+          id++;
+          fetchPokemon(id)
+          }
+          })
+        
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowLeft"){
+          id--;
+          fetchPokemon(id)
+          }
+          })
+    }); }) 
+  }); 
+}
+function generation2(){
+  fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/2")
+
+  .then((response) => response.json())
+  .then((pokebase) => {
+    for (pokemon of pokebase) {
+      let main = document.querySelector("main");
+      
+      main.innerHTML += `
+        <div class="card" style="${bgType1(pokemon)}">
+            <h3 class="idpoke">${pokemon.id}</h3>
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <h2 class="nom">${pokemon.name}</h2>
+            
+        </div>
+        `;
+    }
+
+    window.onclick = function (e) {
+      if (e.target == close || e.target.id == "ipm") {
+        modal.classList.remove("modalActive");
+      }
+    };
+
+    let cards = document.querySelectorAll(".card");
+    let modal = document.querySelector(".modal");
+    let close = document.querySelector(".close");
+    let right = document.querySelector(".right");
+    let left = document.querySelector(".left");
+ 
+      cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        let importation = document.querySelector(".importation")
+        importation.textContent = "";
+        modal.classList.add("modalActive");
+        let id = card.firstElementChild.textContent; 
+        fetchPokemon(id);
+
+        right.addEventListener("click",()=>{
+          id++; 
+          fetchPokemon(id)
+          })
+
+        left.addEventListener("click",()=>{
+          id--;
+          fetchPokemon(id)
+          })
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowRight"){
+          id++;
+          fetchPokemon(id)
+          }
+          })
+        
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowLeft"){
+          id--;
+          fetchPokemon(id)
+          }
+          })
+    }); }) 
+  }); 
+}
+function generation3(){
+  fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/3")
+
+  .then((response) => response.json())
+  .then((pokebase) => {
+    for (pokemon of pokebase) {
+      let main = document.querySelector("main");
+      
+      main.innerHTML += `
+        <div class="card" style="${bgType1(pokemon)}">
+            <h3 class="idpoke">${pokemon.id}</h3>
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <h2 class="nom">${pokemon.name}</h2>
+            
+        </div>
+        `;
+    }
+
+    window.onclick = function (e) {
+      if (e.target == close || e.target.id == "ipm") {
+        modal.classList.remove("modalActive");
+      }
+    };
+
+    let cards = document.querySelectorAll(".card");
+    let modal = document.querySelector(".modal");
+    let close = document.querySelector(".close");
+    let right = document.querySelector(".right");
+    let left = document.querySelector(".left");
+ 
+      cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        let importation = document.querySelector(".importation")
+        importation.textContent = "";
+        modal.classList.add("modalActive");
+        let id = card.firstElementChild.textContent; 
+        fetchPokemon(id);
+
+        right.addEventListener("click",()=>{
+          id++; 
+          fetchPokemon(id)
+          })
+
+        left.addEventListener("click",()=>{
+          id--;
+          fetchPokemon(id)
+          })
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowRight"){
+          id++;
+          fetchPokemon(id)
+          }
+          })
+        
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowLeft"){
+          id--;
+          fetchPokemon(id)
+          }
+          })
+    }); }) 
+  }); 
+}
+function generation4(){
+  fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/4")
+
+  .then((response) => response.json())
+  .then((pokebase) => {
+    for (pokemon of pokebase) {
+      let main = document.querySelector("main");
+      
+      main.innerHTML += `
+        <div class="card" style="${bgType1(pokemon)}">
+            <h3 class="idpoke">${pokemon.id}</h3>
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <h2 class="nom">${pokemon.name}</h2>
+            
+        </div>
+        `;
+    }
+
+    window.onclick = function (e) {
+      if (e.target == close || e.target.id == "ipm") {
+        modal.classList.remove("modalActive");
+      }
+    };
+
+    let cards = document.querySelectorAll(".card");
+    let modal = document.querySelector(".modal");
+    let close = document.querySelector(".close");
+    let right = document.querySelector(".right");
+    let left = document.querySelector(".left");
+ 
+      cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        let importation = document.querySelector(".importation")
+        importation.textContent = "";
+        modal.classList.add("modalActive");
+        let id = card.firstElementChild.textContent; 
+        fetchPokemon(id);
+
+        right.addEventListener("click",()=>{
+          id++; 
+          fetchPokemon(id)
+          })
+
+        left.addEventListener("click",()=>{
+          id--;
+          fetchPokemon(id)
+          })
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowRight"){
+          id++;
+          fetchPokemon(id)
+          }
+          })
+        
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowLeft"){
+          id--;
+          fetchPokemon(id)
+          }
+          })
+    }); }) 
+  }); 
+}
+function generation5(){
+  fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/5")
+
+  .then((response) => response.json())
+  .then((pokebase) => {
+    for (pokemon of pokebase) {
+      let main = document.querySelector("main");
+      
+      main.innerHTML += `
+        <div class="card" style="${bgType1(pokemon)}">
+            <h3 class="idpoke">${pokemon.id}</h3>
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <h2 class="nom">${pokemon.name}</h2>
+            
+        </div>
+        `;
+    }
+
+    window.onclick = function (e) {
+      if (e.target == close || e.target.id == "ipm") {
+        modal.classList.remove("modalActive");
+      }
+    };
+
+    let cards = document.querySelectorAll(".card");
+    let modal = document.querySelector(".modal");
+    let close = document.querySelector(".close");
+    let right = document.querySelector(".right");
+    let left = document.querySelector(".left");
+ 
+      cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        let importation = document.querySelector(".importation")
+        importation.textContent = "";
+        modal.classList.add("modalActive");
+        let id = card.firstElementChild.textContent; 
+        fetchPokemon(id);
+
+        right.addEventListener("click",()=>{
+          id++; 
+          fetchPokemon(id)
+          })
+
+        left.addEventListener("click",()=>{
+          id--;
+          fetchPokemon(id)
+          })
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowRight"){
+          id++;
+          fetchPokemon(id)
+          }
+          })
+        
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowLeft"){
+          id--;
+          fetchPokemon(id)
+          }
+          })
+    }); }) 
+  }); 
+}
+function generation6(){
+  fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/6")
+
+  .then((response) => response.json())
+  .then((pokebase) => {
+    for (pokemon of pokebase) {
+      let main = document.querySelector("main");
+      
+      main.innerHTML += `
+        <div class="card" style="${bgType1(pokemon)}">
+            <h3 class="idpoke">${pokemon.id}</h3>
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <h2 class="nom">${pokemon.name}</h2>
+            
+        </div>
+        `;
+    }
+
+    window.onclick = function (e) {
+      if (e.target == close || e.target.id == "ipm") {
+        modal.classList.remove("modalActive");
+      }
+    };
+
+    let cards = document.querySelectorAll(".card");
+    let modal = document.querySelector(".modal");
+    let close = document.querySelector(".close");
+    let right = document.querySelector(".right");
+    let left = document.querySelector(".left");
+ 
+      cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        let importation = document.querySelector(".importation")
+        importation.textContent = "";
+        modal.classList.add("modalActive");
+        let id = card.firstElementChild.textContent; 
+        fetchPokemon(id);
+
+        right.addEventListener("click",()=>{
+          id++; 
+          fetchPokemon(id)
+          })
+
+        left.addEventListener("click",()=>{
+          id--;
+          fetchPokemon(id)
+          })
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowRight"){
+          id++;
+          fetchPokemon(id)
+          }
+          })
+        
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowLeft"){
+          id--;
+          fetchPokemon(id)
+          }
+          })
+    }); }) 
+  }); 
+}
+function generation7(){
+  fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/7")
+
+  .then((response) => response.json())
+  .then((pokebase) => {
+    for (pokemon of pokebase) {
+      let main = document.querySelector("main");
+      
+      main.innerHTML += `
+        <div class="card" style="${bgType1(pokemon)}">
+            <h3 class="idpoke">${pokemon.id}</h3>
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <h2 class="nom">${pokemon.name}</h2>
+            
+        </div>
+        `;
+    }
+
+    window.onclick = function (e) {
+      if (e.target == close || e.target.id == "ipm") {
+        modal.classList.remove("modalActive");
+      }
+    };
+
+    let cards = document.querySelectorAll(".card");
+    let modal = document.querySelector(".modal");
+    let close = document.querySelector(".close");
+    let right = document.querySelector(".right");
+    let left = document.querySelector(".left");
+ 
+      cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        let importation = document.querySelector(".importation")
+        importation.textContent = "";
+        modal.classList.add("modalActive");
+        let id = card.firstElementChild.textContent; 
+        fetchPokemon(id);
+
+        right.addEventListener("click",()=>{
+          id++; 
+          fetchPokemon(id)
+          })
+
+        left.addEventListener("click",()=>{
+          id--;
+          fetchPokemon(id)
+          })
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowRight"){
+          id++;
+          fetchPokemon(id)
+          }
+          })
+        
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowLeft"){
+          id--;
+          fetchPokemon(id)
+          }
+          })
+    }); }) 
+  }); 
+}
+function generation8(){
+  fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/8")
+
+  .then((response) => response.json())
+  .then((pokebase) => {
+    for (pokemon of pokebase) {
+      let main = document.querySelector("main");
+      
+      main.innerHTML += `
+        <div class="card" style="${bgType1(pokemon)}">
+            <h3 class="idpoke">${pokemon.id}</h3>
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <h2 class="nom">${pokemon.name}</h2>
+            
+        </div>
+        `;
+    }
+
+    window.onclick = function (e) {
+      if (e.target == close || e.target.id == "ipm") {
+        modal.classList.remove("modalActive");
+      }
+    };
+
+    let cards = document.querySelectorAll(".card");
+    let modal = document.querySelector(".modal");
+    let close = document.querySelector(".close");
+    let right = document.querySelector(".right");
+    let left = document.querySelector(".left");
+ 
+      cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        let importation = document.querySelector(".importation")
+        importation.textContent = "";
+        modal.classList.add("modalActive");
+        let id = card.firstElementChild.textContent; 
+        fetchPokemon(id);
+
+        right.addEventListener("click",()=>{
+          id++; 
+          fetchPokemon(id)
+          })
+
+        left.addEventListener("click",()=>{
+          id--;
+          fetchPokemon(id)
+          })
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowRight"){
+          id++;
+          fetchPokemon(id)
+          }
+          })
+        
+
+        window.addEventListener("keydown",(e)=>{
+          if (e.code == "ArrowLeft"){
+          id--;
+          fetchPokemon(id)
+          }
+          })
+    }); }) 
+  }); 
+}
+
+
 let lastScroll = 0;
 let header = document.querySelector("header")
 
@@ -236,11 +797,27 @@ window.addEventListener("scroll", () => {
   lastScroll = window.scrollY;
 });
 
-let menu = document.querySelector(".menu");
+let menuG = document.querySelector(".menuG");
+let menuD = document.querySelector(".menuD");
 let genPokes = document.querySelectorAll(".generationPokemon");
+let typePokes = document.querySelectorAll(".typePokemon")
+let containerBoutonGauche = document.querySelector(".containerBoutonGauche")
+let containerBoutonDroit = document.querySelector(".containerBoutonDroit")
 
 genPokes.forEach((genPoke) =>{
-  menu.addEventListener("click", ()=>{
-    genPoke.style.position = "initial";
+  containerBoutonGauche.addEventListener("mouseover", ()=>{
+    genPoke.classList.add("deroule");
+  })
+  containerBoutonGauche.addEventListener("mouseout", ()=>{
+    genPoke.classList.remove("deroule");
+  })
+})
+
+typePokes.forEach((typePoke) =>{
+  containerBoutonDroit.addEventListener("mouseover", ()=>{
+    typePoke.classList.add("deroule");
+  })
+  containerBoutonDroit.addEventListener("mouseout", ()=>{
+    typePoke.classList.remove("deroule");
   })
 })

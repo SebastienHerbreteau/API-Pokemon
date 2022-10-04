@@ -57,77 +57,72 @@ header {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
   position: fixed;
   top: 0%;
   z-index: 2;
-  transition: 0.4s;
+  transition: 0.5s;
 }
 
 .containerBottomHeader {
   height: 12%;
   display: flex;
   justify-content: center;
-  align-content: center;
   gap: 120px;
+  bottom: 0;
 }
 
-.containerTitle {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  margin-top: 50px;
-}
-
-.pokeball {
-  width: 100px;
-  height: 100px;
+.titre {
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 15vh;
+  height: 200%;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
   position: absolute;
-  right: 37%;
-  top: 0;
-  transform: translate(50%, 50%);
-  z-index: 0;
-}
-
-.pokedeck {
-  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
-  z-index: 1;
-}
-
-.containerBoutonDroit {
-  width: 200px;
 }
 
 .typePokemon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 105px;
   height: 35px;
   position: absolute;
   background-color: #ed5564;
   border-radius: 10px;
-  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
   font-family: "Denk One", sans-serif;
   font-size: 24px;
   padding: 5px;
   color: white;
   cursor: pointer;
-  transition: 0.4s;
 }
 
 .generationPokemon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  width: 200px;
+  width: 220px;
   height: 35px;
-  margin-top: 5px;
   position: absolute;
+  background-color: #ed5564;
+  border-radius: 10px;
+  font-family: "Denk One", sans-serif;
+  font-size: 24px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.menuG,
+.menuD {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 35px;
   background-color: #ed5564;
   border-radius: 10px;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
@@ -136,16 +131,49 @@ header {
   padding: 5px;
   color: white;
   cursor: pointer;
-  transition: 0.4s;
-}
-
-.menu {
-  z-index: 1;
 }
 
 .containerBoutonGauche {
-  width: 200px;
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   height: fit-content;
+  position: relative;
+}
+
+.containerBoutonDroit {
+  width: 220px;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.deroule {
+  position: static;
+  filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  margin-top: 5px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  animation: appear 0.3s ease-in-out forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.generationPokemon:hover,
+.typePokemon:hover {
+  transform: scale(1.04);
+  transition: 0.2s;
 }
 
 .containerInput {
@@ -159,6 +187,7 @@ header {
 .go {
   height: 100%;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
+  cursor: pointer;
 }
 
 .input {
