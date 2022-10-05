@@ -1,3 +1,5 @@
+//--------------------------------------------------Variables FOND CARTES---------------------------------------------------
+
 let typeCouleur = {
   Normal: "background-image: url('assets/normal.png')",
   Combat: "background-image: url('assets/combat.png')",
@@ -19,7 +21,7 @@ let typeCouleur = {
   Fée: "background-image: url('assets/fee.png')",
 };
 
-function random(){
+//--------------------------------------------------FETCH de base---------------------------------------------------
 fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/1")
   .then((response) => response.json())
   .then((pokebase) => {
@@ -82,9 +84,9 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/1")
           })
     }); }) 
   }); 
-}
-random()
 
+
+//--------------------------------------------------Fenêtre MODALE---------------------------------------------------
 
 function fetchPokemon(id){
    
@@ -217,7 +219,7 @@ function tresVulnerable(pokemon) {
   }
   return recup;
 }
-
+//--------------------------------------------------FETCH Menu déroulant GENERATION---------------------------------------------------
 
 let gen1 = document.querySelector(".gen1");
 let gen2 = document.querySelector(".gen2");
@@ -782,20 +784,24 @@ function generation8(){
     }); }) 
   }); 
 }
+//--------------------------------------------------FETCH Menu déroulant TYPE---------------------------------------------------
 
 
-let lastScroll = 0;
-let header = document.querySelector("header")
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY < lastScroll) {
-    header.style.top = 0;
-  } else {
-    header.style.top = "-350px";
-  }
 
-  lastScroll = window.scrollY;
-});
+
+
+
+
+
+
+
+
+
+
+
+
+//-----------------------------------Comportement Menu déroulant GENERATION + TYPE---------------------------------------------------
 
 let menuG = document.querySelector(".menuG");
 let menuD = document.querySelector(".menuD");
@@ -821,3 +827,17 @@ typePokes.forEach((typePoke) =>{
     typePoke.classList.remove("deroule");
   })
 })
+//--------------------------------------------------Comportement HEADER---------------------------------------------------
+let lastScroll = 0;
+let header = document.querySelector("header")
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY < lastScroll) {
+    header.style.top = 0;
+  } else {
+    header.style.top = "-350px";
+  }
+
+  lastScroll = window.scrollY;
+});
+

@@ -77,7 +77,7 @@ header {
   transform: translate(-50%, -50%);
   left: 50%;
   top: 15vh;
-  height: 200%;
+  height: 60%;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
   position: absolute;
 }
@@ -476,6 +476,107 @@ p {
   }
   to {
     -webkit-mask-position: -50%;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .h2Modal {
+    font-size: 800%;
+  }
+  .imgPokeModal {
+    width: 350px;
+    align-self: flex-end;
+  }
+  .type1 > p,
+.type2 > p {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .imgPokeModal {
+    width: 350px;
+    margin-top: 60px;
+  }
+  .type1 > p,
+.type2 > p {
+    font-size: 20px;
+  }
+  .specModal {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas: ". img img id" ". h2modal h2modal ." ". spec resistances ." ". typemodal typemodal .";
+    height: 100vh;
+    width: 100vw;
+  }
+  .h2Modal {
+    grid-area: h2modal;
+    text-transform: uppercase;
+    font-family: "Denk One", sans-serif;
+    color: white;
+    text-shadow: 8px 8px 8px black;
+    font-size: 500%;
+    margin-top: 100px;
+  }
+  .spec div {
+    font-size: 16px;
+  }
+  .spec {
+    width: fit-content;
+    grid-area: spec;
+    font-size: 16px;
+    display: flex;
+    justify-content: start;
+    margin-top: 30px;
+  }
+  .res p {
+    font-size: 16px;
+  }
+  .res span {
+    font-size: 16px;
+  }
+  .res {
+    grid-area: resistances;
+    display: flex;
+    justify-content: start;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Denk One", sans-serif;
+    color: white;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 2px 2px black;
+    margin-top: 30px;
+    width: fit-content;
+  }
+  .imgPokeModal {
+    grid-area: img;
+    align-self: center;
+    justify-self: center;
+    margin-bottom: -250px;
+    transform: translateX(-50), translateY(-50);
+    z-index: 10;
+    filter: drop-shadow(4px 6px 2px rgba(0, 0, 0, 0.655));
+    cursor: pointer;
+  }
+  .typeModal {
+    grid-area: typemodal;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: start;
+    text-shadow: 8px 8px 8px black;
+    gap: 30px;
+    position: relative;
+    margin-top: 70px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .containerBottomHeader {
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .containerBottomHeader {
+    gap: 50px;
   }
 }
 
