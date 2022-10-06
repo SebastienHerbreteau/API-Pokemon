@@ -1,0 +1,39 @@
+%flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%shiny {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: "Denk One", sans-serif;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 2px 2px black;
+    display: inline-block;
+    position: relative;
+    filter: contrast(1.8);
+
+    -webkit-mask-image: linear-gradient(-75deg,
+            rgba(0, 0, 0, 0.6) 30%,
+            #000 50%,
+            rgba(0, 0, 0, 0.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shiny 1.8s linear infinite;
+}
+
+%resColor {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: "Denk One", sans-serif;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 2px 2px black;
+}
+
+%arrow {
+    position: absolute;
+    filter: invert(1);
+    width: 5%;
+    cursor: pointer;
+    z-index: 10;
+}
