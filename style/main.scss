@@ -492,6 +492,11 @@ p {
     height: 25vh;
   }
 
+  .card {
+    width: 180px;
+    border-width: 4px;
+  }
+
   .titre {
     height: 120px;
     margin-top: -30px;
@@ -547,7 +552,177 @@ p {
   }
 
   .h2Modal {
-    @extend %flexCenter;
+
+    position: absolute;
+    top: 11vh;
+    font-size: 400%;
+  }
+
+  .imgPokeModal {
+    width: 60%;
+    position: absolute;
+    top: 32vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .id>p {
+    font-size: 30px;
+
+  }
+
+  .id {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 5vh;
+    right: 0;
+    margin: 0;
+
+  }
+
+  .specModal {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .typeModal {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin: 0;
+    top: 55vh;
+    height: fit-content;
+    left: 50%;
+  }
+
+  .type1>p,
+  .type2>p {
+    font-size: 20px;
+  }
+
+  .typeImage {
+    width: 30px;
+  }
+
+  .right {
+    width: 12%;
+    top: 20vh;
+
+  }
+
+  .left {
+    width: 12%;
+    top: 20vh;
+  }
+
+  .spec {
+    position: absolute;
+    bottom: 4vh;
+    height: fit-content;
+    width: fit-content;
+    left: 2vh;
+  }
+
+  .res {
+    position: absolute;
+    bottom: 4vh;
+    height: fit-content;
+    width: fit-content;
+    right: 2vh;
+    font-size: 16px;
+  }
+
+  .HP,
+  .attaque,
+  .defense,
+  .specialAttaque,
+  .specialDefense,
+  .vitesse {
+    font-size: 16px;
+  }
+
+  .res span {
+    font-size: 16px;
+  }
+
+  span p {
+    font-size: 16px;
+  }
+}
+
+//-------------------------------------------------------------RESPONSIVE 320PX------------------------------------------
+@media (max-width:375px) {
+
+  header {
+    height: 25vh;
+  }
+
+  .nom {
+    font-size: 16px;
+  }
+
+  .card {
+    width: 130px;
+    border-width: 4px;
+  }
+
+  .titre {
+    height: 90px;
+    margin-top: -30px;
+  }
+
+  .containerBottomHeader {
+    display: grid;
+    grid-template-columns: 50%, 50%;
+    grid-template-rows: 50%, 50%;
+    grid-template-areas:
+      "a a"
+      "b c"
+    ;
+
+    width: 300px;
+
+  }
+
+  .containerBoutonGauche {
+    grid-area: b;
+    width: 150px;
+  }
+
+  .containerBoutonDroit {
+    grid-area: c;
+    width: 150px;
+
+  }
+
+  .containerInput {
+    grid-area: a;
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .menuG,
+  .menuD {
+    width: 150px;
+    font-size: 18px;
+    height: 36px;
+  }
+
+  .typePokemon {
+    width: 70px;
+    font-size: 16px;
+  }
+
+  .generationPokemon {
+    width: 140px;
+    font-size: 16px;
+  }
+
+  .h2Modal {
     position: absolute;
     top: 11vh;
     font-size: 400%;
