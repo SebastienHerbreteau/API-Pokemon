@@ -478,7 +478,7 @@ p {
     -webkit-mask-position: -50%;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 460px) {
   header {
     height: 25vh;
   }
@@ -531,7 +531,7 @@ p {
   .imgPokeModal {
     width: 60%;
     position: absolute;
-    top: 30vh;
+    top: 32vh;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -568,22 +568,22 @@ p {
   }
   .right {
     width: 12%;
-    top: 52vh;
+    top: 20vh;
   }
   .left {
     width: 12%;
-    top: 52vh;
+    top: 20vh;
   }
   .spec {
     position: absolute;
-    bottom: 2vh;
+    bottom: 4vh;
     height: fit-content;
     width: fit-content;
     left: 2vh;
   }
   .res {
     position: absolute;
-    bottom: 2vh;
+    bottom: 4vh;
     height: fit-content;
     width: fit-content;
     right: 2vh;
