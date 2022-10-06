@@ -523,6 +523,86 @@ p {
     width: 160px;
     font-size: 18px;
   }
+  .h2Modal {
+    position: absolute;
+    top: 11vh;
+    font-size: 400%;
+  }
+  .imgPokeModal {
+    width: 60%;
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .id > p {
+    font-size: 30px;
+  }
+  .id {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 5vh;
+    right: 0;
+    margin: 0;
+  }
+  .specModal {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+  }
+  .typeModal {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin: 0;
+    top: 55vh;
+    height: fit-content;
+    left: 50%;
+  }
+  .type1 > p,
+.type2 > p {
+    font-size: 20px;
+  }
+  .typeImage {
+    width: 30px;
+  }
+  .right {
+    width: 12%;
+    top: 52vh;
+  }
+  .left {
+    width: 12%;
+    top: 52vh;
+  }
+  .spec {
+    position: absolute;
+    bottom: 2vh;
+    height: fit-content;
+    width: fit-content;
+    left: 2vh;
+  }
+  .res {
+    position: absolute;
+    bottom: 2vh;
+    height: fit-content;
+    width: fit-content;
+    right: 2vh;
+    font-size: 16px;
+  }
+  .HP,
+.attaque,
+.defense,
+.specialAttaque,
+.specialDefense,
+.vitesse {
+    font-size: 16px;
+  }
+  .res span {
+    font-size: 16px;
+  }
+  span p {
+    font-size: 16px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
