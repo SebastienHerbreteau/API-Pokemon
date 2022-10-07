@@ -1,3 +1,3 @@
-# API-Pokemon
+# WebApp-pokemon
 
 Projet en cours
