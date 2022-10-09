@@ -102,8 +102,8 @@ function fetchPokemon(id){
                   <div class="HP">HP : ${pokemon.stats.HP}</div>
                   <div class="attaque">Attaque : ${pokemon.stats.attack}</div>
                   <div class="defense">Défense : ${pokemon.stats.defense}</div>
-                  <div class="specialAttaque">Attaque spéciale : ${pokemon.stats.special_attack}</div>
-                  <div class="specialDefense">Défense spéciale : ${pokemon.stats.special_defense}</div>
+                  <div class="specialAttaque">Attaque spéc. : ${pokemon.stats.special_attack}</div>
+                  <div class="specialDefense">Défense spéc. : ${pokemon.stats.special_defense}</div>
                   <div class="vitesse">Vitesse : ${pokemon.stats.speed}</div>
               </div>
               <div class="res"> 
@@ -784,22 +784,6 @@ function generation8(){
     }); }) 
   }); 
 }
-//--------------------------------------------------FETCH Menu déroulant TYPE---------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //-----------------------------------Comportement Menu déroulant GENERATION + TYPE---------------------------------------------------
 
@@ -811,21 +795,21 @@ let containerBoutonGauche = document.querySelector(".containerBoutonGauche")
 let containerBoutonDroit = document.querySelector(".containerBoutonDroit")
 
 genPokes.forEach((genPoke) =>{
-  containerBoutonGauche.addEventListener("mouseover", ()=>{
-    genPoke.classList.add("deroule");
+  containerBoutonGauche.addEventListener("click", ()=>{
+    genPoke.classList.toggle("deroule");
   })
-  containerBoutonGauche.addEventListener("mouseout", ()=>{
-    genPoke.classList.remove("deroule");
-  })
+  // containerBoutonGauche.addEventListener("mouseout", ()=>{
+  //   genPoke.classList.remove("deroule");
+  // })
 })
 
 typePokes.forEach((typePoke) =>{
-  containerBoutonDroit.addEventListener("mouseover", ()=>{
-    typePoke.classList.add("deroule");
+  containerBoutonDroit.addEventListener("click", ()=>{
+    typePoke.classList.toggle("deroule");
   })
-  containerBoutonDroit.addEventListener("mouseout", ()=>{
-    typePoke.classList.remove("deroule");
-  })
+  // containerBoutonDroit.addEventListener("mouseout", ()=>{
+  //   typePoke.classList.remove("deroule");
+  // })
 })
 //--------------------------------------------------Comportement HEADER---------------------------------------------------
 let lastScroll = 0;
@@ -840,4 +824,4 @@ window.addEventListener("scroll", () => {
 
   lastScroll = window.scrollY;
 });
-
+ 

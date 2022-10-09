@@ -122,7 +122,7 @@ header {
   justify-content: center;
   align-items: center;
   width: 220px;
-  height: 35px;
+  height: 37px;
   background-color: #ed5564;
   border-radius: 10px;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
@@ -147,6 +147,7 @@ header {
   width: 220px;
   height: fit-content;
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -478,252 +479,100 @@ p {
     -webkit-mask-position: -50%;
   }
 }
-@media (max-width: 460px) {
-  header {
-    height: 25vh;
-  }
-  .card {
-    width: 180px;
-    border-width: 4px;
-  }
-  .titre {
-    height: 120px;
-    margin-top: -30px;
-  }
-  .containerBottomHeader {
-    display: grid;
-    grid-template-columns: 50%, 50%;
-    grid-template-rows: 50%, 50%;
-    grid-template-areas: "a a" "b c";
-    gap: 20px;
-    width: 400px;
-  }
-  .containerBoutonGauche {
-    grid-area: b;
-    width: 180px;
-  }
-  .containerBoutonDroit {
-    grid-area: c;
-    width: 180px;
-  }
-  .containerInput {
-    grid-area: a;
-    width: 100%;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-  }
-  .menuG,
-.menuD {
-    width: 180px;
-    font-size: 18px;
-    height: 36px;
-  }
-  .typePokemon {
-    width: 80px;
-    font-size: 18px;
-  }
-  .generationPokemon {
-    width: 160px;
-    font-size: 18px;
-  }
-  .h2Modal {
-    position: absolute;
-    top: 11vh;
-    font-size: 400%;
-  }
-  .imgPokeModal {
-    width: 60%;
-    position: absolute;
-    top: 32vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .id > p {
-    font-size: 30px;
-  }
-  .id {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 5vh;
-    right: 0;
-    margin: 0;
-  }
+@media (max-width: 1440px) {
   .specModal {
-    display: flex;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-  }
-  .typeModal {
-    transform: translate(-50%, -50%);
-    position: absolute;
-    margin: 0;
-    top: 55vh;
-    height: fit-content;
-    left: 50%;
-  }
-  .type1 > p,
-.type2 > p {
-    font-size: 20px;
-  }
-  .typeImage {
-    width: 30px;
-  }
-  .right {
-    width: 12%;
-    top: 20vh;
-  }
-  .left {
-    width: 12%;
-    top: 20vh;
-  }
-  .spec {
-    position: absolute;
-    bottom: 4vh;
-    height: fit-content;
-    width: fit-content;
-    left: 2vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "generation typemodal id" "spec img resistances" "spec img resistances" "h2modal h2modal h2modal";
   }
   .res {
-    position: absolute;
-    bottom: 4vh;
-    height: fit-content;
-    width: fit-content;
-    right: 2vh;
-    font-size: 16px;
+    padding-right: 150px;
   }
-  .HP,
-.attaque,
-.defense,
-.specialAttaque,
-.specialDefense,
-.vitesse {
-    font-size: 16px;
+  .spec {
+    padding-left: 150px;
   }
-  .res span {
-    font-size: 16px;
-  }
-  span p {
-    font-size: 16px;
+  .id {
+    grid-area: id;
+    display: flex;
+    justify-content: right;
+    align-items: flex-start;
+    margin-top: 100px;
+    padding-right: 150px;
   }
 }
-@media (max-width: 375px) {
-  header {
-    height: 25vh;
-  }
-  .nom {
-    font-size: 16px;
-  }
-  .card {
-    width: 130px;
-    border-width: 4px;
-  }
-  .titre {
-    height: 90px;
-    margin-top: -30px;
-  }
+@media (max-width: 1024px) {
   .containerBottomHeader {
-    display: grid;
-    grid-template-columns: 50%, 50%;
-    grid-template-rows: 50%, 50%;
-    grid-template-areas: "a a" "b c";
-    width: 300px;
-  }
-  .containerBoutonGauche {
-    grid-area: b;
-    width: 150px;
-  }
-  .containerBoutonDroit {
-    grid-area: c;
-    width: 150px;
-  }
-  .containerInput {
-    grid-area: a;
-    width: 100%;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-  }
-  .menuG,
-.menuD {
-    width: 150px;
-    font-size: 18px;
-    height: 36px;
-  }
-  .typePokemon {
-    width: 70px;
-    font-size: 16px;
-  }
-  .generationPokemon {
-    width: 140px;
-    font-size: 16px;
-  }
-  .h2Modal {
-    position: absolute;
-    top: 11vh;
-    font-size: 400%;
-  }
-  .imgPokeModal {
-    width: 60%;
-    position: absolute;
-    top: 32vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .id > p {
-    font-size: 30px;
-  }
-  .id {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 5vh;
-    right: 0;
-    margin: 0;
-  }
-  .specModal {
-    display: flex;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-  }
-  .typeModal {
-    transform: translate(-50%, -50%);
-    position: absolute;
-    margin: 0;
-    top: 55vh;
-    height: fit-content;
-    left: 50%;
-  }
-  .type1 > p,
-.type2 > p {
-    font-size: 20px;
-  }
-  .typeImage {
-    width: 30px;
-  }
-  .right {
-    width: 12%;
-    top: 20vh;
-  }
-  .left {
-    width: 12%;
-    top: 20vh;
-  }
-  .spec {
-    position: absolute;
-    bottom: 4vh;
-    height: fit-content;
-    width: fit-content;
-    left: 2vh;
+    gap: 40px;
   }
   .res {
+    padding-right: 100px;
+    font-size: 18px;
+  }
+  .res span {
+    font-size: 18px;
+  }
+  span > p {
+    font-size: 18px;
+  }
+  .spec {
+    padding-left: 100px;
+    font-size: 18px;
+  }
+  .imgPokeModal {
     position: absolute;
-    bottom: 4vh;
-    height: fit-content;
-    width: fit-content;
-    right: 2vh;
+    top: 27vh;
+  }
+  .HP,
+.attaque,
+.defense,
+.specialAttaque,
+.specialDefense,
+.vitesse {
+    font-size: 18px;
+  }
+  .h2Modal {
+    font-size: 800%;
+    margin-top: -100px;
+  }
+  .id {
+    margin-right: -50px;
+  }
+  .id > p {
+    font-size: 42px;
+  }
+  .typeModal {
+    bottom: 10%;
+  }
+  .right {
+    right: 2%;
+    width: 8%;
+  }
+  .left {
+    left: 2%;
+    width: 8%;
+  }
+}
+@media (max-width: 768px) {
+  .containerBottomHeader {
+    gap: 40px;
+  }
+  .res {
+    padding-right: 70px;
     font-size: 16px;
+  }
+  .res span {
+    font-size: 16px;
+  }
+  span > p {
+    font-size: 16px;
+  }
+  .spec {
+    padding-left: 70px;
+    font-size: 16px;
+  }
+  .imgPokeModal {
+    position: absolute;
+    top: 35vh;
+    height: 40%;
   }
   .HP,
 .attaque,
@@ -733,11 +582,12 @@ p {
 .vitesse {
     font-size: 16px;
   }
-  .res span {
-    font-size: 16px;
+  .h2Modal {
+    font-size: 800%;
+    margin-top: -100px;
   }
-  span p {
-    font-size: 16px;
+  .id {
+    margin-right: -80px;
   }
 }
 
