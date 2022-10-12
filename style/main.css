@@ -186,9 +186,13 @@ header {
 }
 
 .go {
+  height: 37px;
+  background-color: #ed5564;
+  border-radius: 10px;
   height: 100%;
   filter: drop-shadow(4px 5px 2px rgba(41, 41, 41, 0.507));
   cursor: pointer;
+  color: white;
 }
 
 .input {

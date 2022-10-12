@@ -22,12 +22,12 @@ let typeCouleur = {
 };
 
 //--------------------------------------------------FETCH de base---------------------------------------------------
-fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/1")
+fetch("")
   .then((response) => response.json())
   .then((pokebase) => {
     for (pokemon of pokebase) {
       let main = document.querySelector("main");
-      
+     
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <h3 class="idpoke">${pokemon.id}</h3>
