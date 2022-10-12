@@ -1,24 +1,24 @@
 //--------------------------------------------------Variables FOND CARTES---------------------------------------------------
 
 let typeCouleur = {
-  Normal: "background-image: url('assets/normal.png')",
-  Combat: "background-image: url('assets/combat.png')",
-  Vol: "background-image: url('assets/vol.png')",
-  Poison: "background-image: url('assets/poison.png')",
-  Sol: "background-image: url('assets/sol.png')",
-  Roche: "background-image: url('assets/roche.png')",
-  Insecte: "background-image: url('assets/insecte.png')",
-  Spectre: "background-image: url('assets/spectre.png')",
-  Acier: "background-image: url('assets/acier.png')",
-  Feu: "background-image: url('assets/feu.png')",
-  Eau: "background-image: url('assets/eau.png')",
-  Plante: "background-image: url('assets/plante.png')",
-  Électrik: "background-image: url('assets/electrik.png')",
-  Psy: "background-image: url('assets/psy.png')",
-  Glace: "background-image: url('assets/glace.png')",
-  Dragon: "background-image: url('assets/dragon.png')",
-  Ténèbres: "background-image: url('assets/tenebres.png')",
-  Fée: "background-image: url('assets/fee.png')",
+  Normal: "background-image: url('assets/normal.webp')",
+  Combat: "background-image: url('assets/combat.webp')",
+  Vol: "background-image: url('assets/vol.webp')",
+  Poison: "background-image: url('assets/poison.webp')",
+  Sol: "background-image: url('assets/sol.webp')",
+  Roche: "background-image: url('assets/roche.webp')",
+  Insecte: "background-image: url('assets/insecte.webp')",
+  Spectre: "background-image: url('assets/spectre.webp')",
+  Acier: "background-image: url('assets/acier.webp')",
+  Feu: "background-image: url('assets/feu.webp')",
+  Eau: "background-image: url('assets/eau.webp')",
+  Plante: "background-image: url('assets/plante.webp')",
+  Électrik: "background-image: url('assets/electrik.webp')",
+  Psy: "background-image: url('assets/psy.webp')",
+  Glace: "background-image: url('assets/glace.webp')",
+  Dragon: "background-image: url('assets/dragon.webp')",
+  Ténèbres: "background-image: url('assets/tenebres.webp')",
+  Fée: "background-image: url('assets/fee.webp')",
 };
 
 //--------------------------------------------------FETCH de base---------------------------------------------------
@@ -31,7 +31,7 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/1")
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <h3 class="idpoke">${pokemon.id}</h3>
-            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.webp" alt="image de ${pokemon.name}">
             <h2 class="nom">${pokemon.name}</h2>
             
         </div>
@@ -113,7 +113,7 @@ function fetchPokemon(id){
                   <div class="vulnerable ff">${vulnerable(pokemon)}</div>
                   <div class="tresVulnerable ff">${tresVulnerable(pokemon)}</div>
               </div>
-              <img class="imgPokeModal" id="ipm" src="assets/pokemons/${pokemon.id}.png">
+              <img class="imgPokeModal" id="ipm" src="assets/pokemons/${pokemon.id}.webp" alt="image de ${pokemon.name}">
               <h2 class="h2Modal">${pokemon.name}</h2>
               <div class="id"><p>#${pokemon.id}</p></div>
              
@@ -123,13 +123,13 @@ function fetchPokemon(id){
 
 function type(pokemon) {
   if (pokemon.apiTypes[1] == undefined) {
-    return `<div class="type1"><img class="typeImage" src="${pokemon.apiTypes[0].image}"/>
+    return `<div class="type1"><img class="typeImage" src="${pokemon.apiTypes[0].image}" alt="image de ${pokemon.apiTypes[0].name}"/>
                 <p>${pokemon.apiTypes[0].name}</p></div>`;
   } else {
-    return `<div class="type1"><img class="typeImage" src="${pokemon.apiTypes[0].image}"/>
+    return `<div class="type1"><img class="typeImage" src="${pokemon.apiTypes[0].image}" alt="image de ${pokemon.apiTypes[0].name}"/>
                 <p>${pokemon.apiTypes[0].name}</p></div> 
 
-            <div class="type2"><img class="typeImage" src="${pokemon.apiTypes[1].image}"/>
+            <div class="type2"><img class="typeImage" src="${pokemon.apiTypes[1].image}" alt="image de ${pokemon.apiTypes[1].name}"/>
                 <p>${pokemon.apiTypes[1].name}</p></div>`;
   }
 }
@@ -275,7 +275,7 @@ function generation1(){
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <h3 class="idpoke">${pokemon.id}</h3>
-            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.webp">
             <h2 class="nom">${pokemon.name}</h2>
             
         </div>
@@ -340,7 +340,7 @@ function generation2(){
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <h3 class="idpoke">${pokemon.id}</h3>
-            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.webp">
             <h2 class="nom">${pokemon.name}</h2>
             
         </div>
@@ -405,7 +405,7 @@ function generation3(){
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <h3 class="idpoke">${pokemon.id}</h3>
-            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.webp" alt="image de ${pokemon.name}">
             <h2 class="nom">${pokemon.name}</h2>
             
         </div>
@@ -470,7 +470,7 @@ function generation4(){
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <h3 class="idpoke">${pokemon.id}</h3>
-            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.webp" alt="image de ${pokemon.name}">
             <h2 class="nom">${pokemon.name}</h2>
             
         </div>
@@ -535,7 +535,7 @@ function generation5(){
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <h3 class="idpoke">${pokemon.id}</h3>
-            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.webp" alt="image de ${pokemon.name}">
             <h2 class="nom">${pokemon.name}</h2>
             
         </div>
@@ -600,7 +600,7 @@ function generation6(){
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <h3 class="idpoke">${pokemon.id}</h3>
-            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.webp" alt="image de ${pokemon.name}">
             <h2 class="nom">${pokemon.name}</h2>
             
         </div>
@@ -665,7 +665,7 @@ function generation7(){
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <h3 class="idpoke">${pokemon.id}</h3>
-            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.webp" alt="image de ${pokemon.name}">
             <h2 class="nom">${pokemon.name}</h2>
             
         </div>
@@ -730,7 +730,7 @@ function generation8(){
       main.innerHTML += `
         <div class="card" style="${bgType1(pokemon)}">
             <h3 class="idpoke">${pokemon.id}</h3>
-            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.png">
+            <img class="imgPoke" src="assets/pokemons/${pokemon.id}.webp" alt="image de ${pokemon.name}">
             <h2 class="nom">${pokemon.name}</h2>
             
         </div>
