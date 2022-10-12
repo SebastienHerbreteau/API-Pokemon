@@ -37,8 +37,8 @@
 
 
       <form class="containerInput" method="get" action="">
-        <input type="search" name="search" placeholder="Recherche...">
-        <input type="submit" value="Go">
+        <input class ="input" type="search" name="search" placeholder="Recherche...">
+        <input class="valider" type="submit" value="Go">
       </form>
 
 
@@ -92,7 +92,7 @@
       $result = $pokemon->fetchAll();
 
       foreach ($result as $poke) { ?>
-        <div class="card" style="<?php echo $poke[2] ?>">
+        <div class="card" style="background-image: url('<?php echo $poke[2] ?>')">
           <h3 class="idpoke"><?php echo $poke[0] ?></h3>
           <img class="imgPoke" src="<?php echo $poke[3] ?>" alt="image de <?php echo $poke[1] ?>">
           <h2 class="nom"><?php echo $poke[1] ?></h2>

@@ -825,3 +825,50 @@ window.addEventListener("scroll", () => {
   lastScroll = window.scrollY;
 });
  
+
+//--------------------------------------------------Comportement modal après click sur resultat recherche---------------------------------------------------
+window.onclick = function (e) {
+  if (e.target == close || e.target.id == "ipm") {
+    modal.classList.remove("modalActive");
+  }
+};
+
+let cards = document.querySelectorAll(".card");
+let modal = document.querySelector(".modal");
+let close = document.querySelector(".close");
+let right = document.querySelector(".right");
+let left = document.querySelector(".left");
+
+  cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    let importation = document.querySelector(".importation")
+    importation.textContent = "";
+    modal.classList.add("modalActive");
+    let id = card.firstElementChild.textContent; 
+    fetchPokemon(id);
+
+    right.addEventListener("click",()=>{
+      id++; 
+      fetchPokemon(id)
+      })
+
+    left.addEventListener("click",()=>{
+      id--;
+      fetchPokemon(id)
+      })
+
+    window.addEventListener("keydown",(e)=>{
+      if (e.code == "ArrowRight"){
+      id++;
+      fetchPokemon(id)
+      }
+      })
+    
+
+    window.addEventListener("keydown",(e)=>{
+      if (e.code == "ArrowLeft"){
+      id--;
+      fetchPokemon(id)
+      }
+      })
+}); }) 
