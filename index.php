@@ -17,52 +17,20 @@
   <header>
 
     <img src="assets/titre.webp" class="titre" alt="titre pokedeck">
-
     <div class="containerBottomHeader">
-      <section class="afficher_pokemon">
 
-
-      </section>
-      <ul class="containerBoutonGauche">
-        <li class="menuG">Génération</li>
-        <li class="generationPokemon gen1">Génération 1</li>
-        <li class="generationPokemon gen2">Génération 2</li>
-        <li class="generationPokemon gen3">Génération 3</li>
-        <li class="generationPokemon gen4">Génération 4</li>
-        <li class="generationPokemon gen5">Génération 5</li>
-        <li class="generationPokemon gen6">Génération 6</li>
-        <li class="generationPokemon gen7">Génération 7</li>
-        <li class="generationPokemon gen8">Génération 8</li>
-      </ul>
-
-
+      <span class="filtre">Filtrer par</span>
       <form class="containerInput" method="get" action="">
-        <input class ="input" type="search" name="search" placeholder="Recherche...">
+        <select class="select" name="select">
+          <option class="choix" value="..." name="...">...</option>
+          <option class="choix" value="name" name="name">Nom</option>
+          <option class="choix" value="id" name="id">ID</option>
+          <option class="choix" value="generation" name="generation">Génération</option>
+          <option class="choix" value="type2" name="type2">Type</option>
+        </select>
+        <input class="input" type="search" name="search" placeholder="Recherche...">
         <input class="valider" type="submit" value="Go">
       </form>
-
-
-      <ul class=" containerBoutonDroit">
-        <li class="menuD">Type</li>
-        <li class="typePokemon normal">Normal</li>
-        <li class="typePokemon">Combat</li>
-        <li class="typePokemon">Vol</li>
-        <li class="typePokemon">Poison</li>
-        <li class="typePokemon">Sol</li>
-        <li class="typePokemon">Roche</li>
-        <li class="typePokemon">Insecte</li>
-        <li class="typePokemon">Spectre</li>
-        <li class="typePokemon">Acier</li>
-        <li class="typePokemon">Feu</li>
-        <li class="typePokemon">Eau</li>
-        <li class="typePokemon">Plante</li>
-        <li class="typePokemon">Électrik</li>
-        <li class="typePokemon">Psy</li>
-        <li class="typePokemon">Glace</li>
-        <li class="typePokemon">Dragon</li>
-        <li class="typePokemon">Ténèbres</li>
-        <li class="typePokemon">Fée</li>
-      </ul>
 
     </div>
 
@@ -86,21 +54,24 @@
     $dbname = "pokemon";
     $path = "mysql:host=$host;dbname=$dbname;charset=utf8";
     $bdd = new PDO($path, $user, $pass);
+    $select = $_GET['select'];
+    $search = $_GET['search'];
 
-    if (isset($_GET['search'])) {
-      $pokemon = $bdd->query('SELECT id, name, background, img_pokemon FROM pokemon WHERE name LIKE "%' . $_GET['search'] . '%"');
-      $result = $pokemon->fetchAll();
-
-      foreach ($result as $poke) { ?>
-        <div class="card" style="background-image: url('<?php echo $poke[2] ?>')">
-          <h3 class="idpoke"><?php echo $poke[0] ?></h3>
-          <img class="imgPoke" src="<?php echo $poke[3] ?>" alt="image de <?php echo $poke[1] ?>">
-          <h2 class="nom"><?php echo $poke[1] ?></h2>
-        </div><?php
-
-            }
+    if (isset($search) &&  $select = "name") {
+      filtre();
           }
 
+    function filtre(){
+      $pokemon = $GLOBALS["bdd"]->query('SELECT id, name, background, img_pokemon FROM pokemon WHERE"'. $GLOBALS["select"] .'" LIKE "' . $GLOBALS["search"] . '" ORDER BY id ASC');
+      $result = $pokemon->fetchAll();
+        foreach ($result as $poke) { ?>
+          <div class="card" style="background-image: url('<?php echo $poke[2] ?>')">
+            <h3 class="idpoke"><?php echo $poke[0] ?></h3>
+            <img class="imgPoke" src="<?php echo $poke[3] ?>" alt="image de <?php echo $poke[1] ?>">
+            <h2 class="nom"><?php echo $poke[1] ?></h2>
+          </div><?php
+                  }
+          }
               ?>
   </main>
 
