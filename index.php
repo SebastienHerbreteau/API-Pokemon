@@ -54,10 +54,11 @@
     $dbname = "pokemon";
     $path = "mysql:host=$host;dbname=$dbname;charset=utf8";
     $bdd = new PDO($path, $user, $pass);
+    $result = addslashes(htmlspecialchars($_GET['search']));
 
 
 
-    if (isset($_GET['search']) &&  $_GET['select'] == "name") {
+    if (isset($result) &&  $_GET['select'] == "name") {
 
       filtre();
     } elseif (isset($_GET['search']) &&  $_GET['select'] == "generation") {
@@ -70,7 +71,7 @@
 
     function filtre()
     {
-      $pokemon = $GLOBALS["bdd"]->query('SELECT id, name, background, img_pokemon FROM pokemon WHERE ' . $_GET['select'] . ' LIKE "%' . $_GET['search'] . '%" ORDER BY id ASC');
+      $pokemon = $GLOBALS["bdd"]->query('SELECT id, name, background, img_pokemon FROM pokemon WHERE ' . $_GET['select'] . ' LIKE "%' . $GLOBALS["result"] . '%" ORDER BY id ASC');
       $result = $pokemon->fetchAll();
       foreach ($result as $poke) { ?>
         <div class="card" style="background-image: url('<?php echo $poke[2] ?>')">

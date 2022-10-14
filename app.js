@@ -46,16 +46,16 @@ function type(pokemon) {
   }
 }
 
-function bgType1(pokemon) {
-  for (const [key, value] of Object.entries(typeCouleur)) {
-    //--------toutes les entrées de l'objet (typeCouleur), sont tranformées en tableau [clé,valeur]
-    if (pokemon.apiTypes[1] == undefined) {
-      if (pokemon.apiTypes[0].name == [key]) return [value];
-    } else if (pokemon.apiTypes[1] !== undefined) {
-      if (pokemon.apiTypes[1].name == [key]) return [value];
-    }
-  }
-}
+// function bgType1(pokemon) {
+//   for (const [key, value] of Object.entries(typeCouleur)) {
+//     //--------toutes les entrées de l'objet (typeCouleur), sont tranformées en tableau [clé,valeur]
+//     if (pokemon.apiTypes[1] == undefined) {
+//       if (pokemon.apiTypes[0].name == [key]) return [value];
+//     } else if (pokemon.apiTypes[1] !== undefined) {
+//       if (pokemon.apiTypes[1].name == [key]) return [value];
+//     }
+//   }
+// }
 
 function immunise(pokemon) {
   let recup = "";
