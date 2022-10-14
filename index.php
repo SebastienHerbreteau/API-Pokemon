@@ -15,6 +15,15 @@
 
 <body>
   <header>
+    <p class="avertissement">Site en construction - Non-responsive pour le moment, optimisé pour une résolution de 1920*1080</p>
+    <div class=" connect">
+      <div class="container_avatar">
+        <img src="assets/avatar.png" class="avatar">
+      </div>
+      <span class="user"></span>
+    </div>
+    <img src="assets/off.webp" class="onoff" alt="bouton connexion">
+
 
     <img src="assets/titre.webp" class="titre" alt="titre pokedeck">
     <div class="containerBottomHeader">
@@ -59,7 +68,6 @@
 
 
     if (isset($result) &&  $_GET['select'] == "name") {
-
       filtre();
     } elseif (isset($_GET['search']) &&  $_GET['select'] == "generation") {
       filtre();

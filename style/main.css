@@ -66,6 +66,48 @@ header {
   transition: 0.5s;
 }
 
+.avertissement {
+  width: 250px;
+  word-wrap: normal;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ed5564;
+  border-radius: 10px;
+  cursor: pointer;
+  filter: drop-shadow(2px 2px 1px rgba(41, 41, 41, 0.507));
+  padding: 5px;
+}
+
+.onoff {
+  height: 30px;
+  position: absolute;
+  transform: translate(50%, 50%);
+  right: 5vw;
+  top: 13vh;
+  filter: drop-shadow(2px 2px 1px rgba(41, 41, 41, 0.507));
+  cursor: pointer;
+}
+
+.container_avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  filter: drop-shadow(2px 2px 1px rgba(41, 41, 41, 0.507));
+  position: absolute;
+  transform: translate(50%, 50%);
+  right: 5vw;
+  top: 0vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  height: 50px;
+}
+
 .containerBottomHeader {
   height: 40px;
   display: flex;

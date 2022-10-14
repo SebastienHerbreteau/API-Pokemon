@@ -1,3 +1,20 @@
+let onoff = document.querySelector(".onoff");
+let avertissement = document.querySelector(".avertissement");
+
+onoff.addEventListener("click",()=>{
+  window.open("connexion.php")
+  
+})
+
+avertissement.addEventListener("click",()=>{
+  console.log("hello")
+  avertissement.style.display = "none";
+  
+})
+
+
+
+
 
 //--------------------------------------------------Fenêtre MODALE---------------------------------------------------
 
@@ -45,17 +62,6 @@ function type(pokemon) {
                 <p>${pokemon.apiTypes[0].name}</p></div>`;
   }
 }
-
-// function bgType1(pokemon) {
-//   for (const [key, value] of Object.entries(typeCouleur)) {
-//     //--------toutes les entrées de l'objet (typeCouleur), sont tranformées en tableau [clé,valeur]
-//     if (pokemon.apiTypes[1] == undefined) {
-//       if (pokemon.apiTypes[0].name == [key]) return [value];
-//     } else if (pokemon.apiTypes[1] !== undefined) {
-//       if (pokemon.apiTypes[1].name == [key]) return [value];
-//     }
-//   }
-// }
 
 function immunise(pokemon) {
   let recup = "";
