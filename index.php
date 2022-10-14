@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Denk+One&display=swap" rel="stylesheet" />
-  <title>Document</title>
+  <title>Pokedeck</title>
 </head>
 
 <body>
@@ -54,23 +54,31 @@
     $dbname = "pokemon";
     $path = "mysql:host=$host;dbname=$dbname;charset=utf8";
     $bdd = new PDO($path, $user, $pass);
-    $select = $_GET['select'];
-    $search = $_GET['search'];
 
-    if (isset($search) &&  $select = "name") {
+
+
+    if (isset($_GET['search']) &&  $_GET['select'] == "name") {
+
       filtre();
-          }
+    } elseif (isset($_GET['search']) &&  $_GET['select'] == "generation") {
+      filtre();
+    } elseif (isset($_GET['search']) &&  $_GET['select'] == "id") {
+      filtre();
+    } elseif (isset($_GET['search']) &&  $_GET['select'] == "type2") {
+      filtre();
+    };
 
-    function filtre(){
-      $pokemon = $GLOBALS["bdd"]->query('SELECT id, name, background, img_pokemon FROM pokemon WHERE"'. $GLOBALS["select"] .'" LIKE "' . $GLOBALS["search"] . '" ORDER BY id ASC');
+    function filtre()
+    {
+      $pokemon = $GLOBALS["bdd"]->query('SELECT id, name, background, img_pokemon FROM pokemon WHERE ' . $_GET['select'] . ' LIKE "%' . $_GET['search'] . '%" ORDER BY id ASC');
       $result = $pokemon->fetchAll();
-        foreach ($result as $poke) { ?>
-          <div class="card" style="background-image: url('<?php echo $poke[2] ?>')">
-            <h3 class="idpoke"><?php echo $poke[0] ?></h3>
-            <img class="imgPoke" src="<?php echo $poke[3] ?>" alt="image de <?php echo $poke[1] ?>">
-            <h2 class="nom"><?php echo $poke[1] ?></h2>
-          </div><?php
-                  }
+      foreach ($result as $poke) { ?>
+        <div class="card" style="background-image: url('<?php echo $poke[2] ?>')">
+          <h3 class="idpoke"><?php echo $poke[0] ?></h3>
+          <img class="imgPoke" src="<?php echo $poke[3] ?>" alt="image de <?php echo $poke[1] ?>">
+          <h2 class="nom"><?php echo $poke[1] ?></h2>
+        </div><?php
+            }
           }
               ?>
   </main>

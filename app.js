@@ -39,11 +39,10 @@ function type(pokemon) {
     return `<div class="type1"><img class="typeImage" src="${pokemon.apiTypes[0].image}" alt="image de ${pokemon.apiTypes[0].name}"/>
                 <p>${pokemon.apiTypes[0].name}</p></div>`;
   } else {
-    return `<div class="type1"><img class="typeImage" src="${pokemon.apiTypes[0].image}" alt="image de ${pokemon.apiTypes[0].name}"/>
-                <p>${pokemon.apiTypes[0].name}</p></div> 
-
-            <div class="type2"><img class="typeImage" src="${pokemon.apiTypes[1].image}" alt="image de ${pokemon.apiTypes[1].name}"/>
-                <p>${pokemon.apiTypes[1].name}</p></div>`;
+    return `<div class="type2"><img class="typeImage" src="${pokemon.apiTypes[1].image}" alt="image de ${pokemon.apiTypes[1].name}"/>
+                <p>${pokemon.apiTypes[1].name}</p></div>
+                <div class="type1"><img class="typeImage" src="${pokemon.apiTypes[0].image}" alt="image de ${pokemon.apiTypes[0].name}"/>
+                <p>${pokemon.apiTypes[0].name}</p></div>`;
   }
 }
 
