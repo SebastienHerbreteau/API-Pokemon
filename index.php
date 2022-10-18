@@ -18,14 +18,14 @@
     <p class="avertissement">Site en construction - Non-responsive pour le moment, optimisé pour une résolution de 1920*1080</p>
     <div class=" connect">
       <div class="container_avatar">
-        <img src="assets/avatar.png" class="avatar">
+        <img src="assets/avatar.png" class="avatar" alt="avatar">
       </div>
       <span class="user"></span>
     </div>
-    <img src="assets/off.webp" class="onoff" alt="bouton connexion">
+    <a href="inscription.php"><img src="assets/off.webp" class="onoff" alt="bouton connexion"></a>
 
 
-    <img src="assets/titre.webp" class="titre" alt="titre pokedeck">
+    <a href="index.php"><img src="assets/titre.webp" class="titre" alt="titre pokedeck"></a>
     <div class="containerBottomHeader">
 
       <span class="filtre">Filtrer par</span>
@@ -38,7 +38,7 @@
           <option class="choix" value="type2" name="type2">Type</option>
         </select>
         <input class="input" type="search" name="search" placeholder="Recherche...">
-        <input class="valider" type="submit" value="Go">
+        <input class="submit" type="submit" value="Go">
       </form>
 
     </div>

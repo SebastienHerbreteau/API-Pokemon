@@ -1,10 +1,11 @@
-let onoff = document.querySelector(".onoff");
+//---------------------------------------------Avertissement construction en cours----------------------------
+// let onoff = document.querySelector(".onoff");
 let avertissement = document.querySelector(".avertissement");
 
-onoff.addEventListener("click",()=>{
-  window.open("connexion.php")
+// onoff.addEventListener("click",()=>{
+//   window.open("inscription.php")
   
-})
+// })
 
 avertissement.addEventListener("click",()=>{
   console.log("hello")
@@ -52,7 +53,7 @@ function fetchPokemon(id){
         )}
 
 function type(pokemon) {
-  if (pokemon.apiTypes[1] == undefined) {
+  if (pokemon.apiTypes[1] === undefined) {
     return `<div class="type1"><img class="typeImage" src="${pokemon.apiTypes[0].image}" alt="image de ${pokemon.apiTypes[0].name}"/>
                 <p>${pokemon.apiTypes[0].name}</p></div>`;
   } else {
@@ -70,7 +71,7 @@ function immunise(pokemon) {
     let recupName = pokeDam.name;
     let recupDamage = pokeDam.damage_relation;
 
-    if (pokeDam.damage_relation == "immune") {
+    if (pokeDam.damage_relation === "immune") {
       recupDamage = `<span><p>${recupName} : </p><span class="gold">Immunisé</span></span>`;
       recup += recupDamage;
     }
@@ -85,7 +86,7 @@ function tresResistant(pokemon) {
     let recupName = pokeDam.name;
     let recupDamage = pokeDam.damage_relation;
 
-    if (pokeDam.damage_relation == "twice_resistant") {
+    if (pokeDam.damage_relation === "twice_resistant") {
       recupDamage = `<span><p>${recupName} : </p><span class="silver">Très résistant</span></span>`;
       recup += recupDamage;
     }
@@ -100,7 +101,7 @@ function resistant(pokemon) {
     let recupName = pokeDam.name;
     let recupDamage = pokeDam.damage_relation;
 
-    if (pokeDam.damage_relation == "resistant") {
+    if (pokeDam.damage_relation === "resistant") {
       recupDamage = `<span><p>${recupName} : </p><span class="vert">Résistant</span></span>`;
       recup += recupDamage;
     }
@@ -115,7 +116,7 @@ function vulnerable(pokemon) {
     let recupName = pokeDam.name;
     let recupDamage = pokeDam.damage_relation;
 
-    if (pokeDam.damage_relation == "vulnerable") {
+    if (pokeDam.damage_relation === "vulnerable") {
       recupDamage = `<span><p>${recupName} : </p><span class="orange">Vulnérable</span></span>`;
       recup += recupDamage;
     }
@@ -130,7 +131,7 @@ function tresVulnerable(pokemon) {
     let recupName = pokeDam.name;
     let recupDamage = pokeDam.damage_relation;
 
-    if (pokeDam.damage_relation == "twice_vulnerable") {
+    if (pokeDam.damage_relation === "twice_vulnerable") {
       recupDamage = `<span><p>${recupName} : </p><span class="rouge">Très vulnérable</span></span>`;
       recup += recupDamage;
     }
@@ -154,7 +155,7 @@ window.addEventListener("scroll", () => {
 
 //-----------------------------------------Comportement modal après click sur resultat recherche---------------------------------------------------
 window.onclick = function (e) {
-  if (e.target == close || e.target.id == "ipm") {
+  if (e.target === close || e.target.id === "ipm") {
     modal.classList.remove("modalActive");
   }
 };
@@ -184,7 +185,7 @@ let left = document.querySelector(".left");
       })
 
     window.addEventListener("keydown",(e)=>{
-      if (e.code == "ArrowRight"){
+      if (e.code === "ArrowRight"){
       id++;
       fetchPokemon(id)
       }
@@ -192,7 +193,7 @@ let left = document.querySelector(".left");
     
 
     window.addEventListener("keydown",(e)=>{
-      if (e.code == "ArrowLeft"){
+      if (e.code === "ArrowLeft"){
       id--;
       fetchPokemon(id)
       }

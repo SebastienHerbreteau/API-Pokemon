@@ -10,9 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Denk+One&display=swap" rel="stylesheet" />
-    <title>Pokedeck</title>
+    <title>Inscription</title>
 </head>
+<?php
 
+if (!empty($_POST['mdp']) and $_POST['mdp'] < 8){
+    echo "Ton mot de passe doit contenir au minimum 8 caractères.";
+};
+
+?>
 <body>
     <header>
         <p class="avertissement">Site en construction - Non-responsive pour le moment, optimisé pour une résolution de 1920*1080</p>
@@ -23,12 +29,15 @@
             <span class="user"></span>
         </div>
         <img src="assets/off.webp" class="onoff" alt="bouton connexion">
+        <a href="index.php"><img src="assets/titre.webp" class="titre" alt="titre pokedeck"></a>
     </header>
     <main>
-        <form action="">
-            <p>Quel est ton prénom ?</p><input class="input" name="nom" type="text">
-            <p>Quel identifiant souhaites-tu avoir ?</p><input class="input" name="pseudo" type="text">
-            <p>Quel mot de passe veux-tu ?</p><input class="input" name="mdp" type="text">
+    <h1>Inscription</h1>
+        <form method="post" action="users.php">
+            <p>Quel est ton prénom ?</p><input class="input" name="name" type="text" required>
+            <p>Quel identifiant souhaites-tu avoir ?</p><input class="input" name="pseudo" type="text" required>
+            <p>Quel mot de passe veux-tu ?</p><input class="input" name="mdp" type="text" required>
+            <input type="submit" class="submit">
         </form>
     </main>
 
